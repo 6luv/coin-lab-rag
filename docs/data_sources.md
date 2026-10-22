@@ -11,7 +11,7 @@
 | **Wikidata** | 코인 ↔ 위키 문서 연결 | `w/api.php` (`haswbstatement:P5777`, `wbgetentities`) | CC0 (출처 표기 의무 없음, 표기 권장) | `data/source_map.json` | 포함 |
 | **한국어 위키백과** | 외부 설명 문서 (F2004) | `ko.wikipedia.org/w/api.php` (search, extracts) | **CC BY-SA 4.0** — 제목·원문 URL 표시, 변경 시 동일 조건 | `data/docs/wikipedia/*.json` | 포함 가능(라이선스 표기) |
 | **English Wikipedia** | 한국어 문서가 없을 때 폴백 | `en.wikipedia.org/w/api.php` | CC BY-SA 4.0 | 같은 위치 | 포함 가능 |
-| **프로젝트 백서(PDF/웹)** | F2016 심화(예정) | CoinGecko `links.whitepaper` URL | 문서마다 다름 → 수집 전 개별 확인, 출처 파일명+쪽 표시 | `data/docs/whitepaper/` (예정) | 라이선스 확인 후 |
+| **프로젝트 백서(PDF/웹)** | 위키 자체 문서가 없는 코인의 자체 문서 (F2004 · F2016) | CoinGecko `links.whitepaper` URL (`scripts/collect_whitepapers.py`, 질문 시 대체 수집) | 저작권은 각 프로젝트 — 교육용 검색 근거로만 인용, 근거에 원문 URL·파일명·쪽 표시, 원문 재배포 안 함. 1초 간격·재시도·20MB 상한·User-Agent 식별 | `data/docs/whitepaper/*.json` | **제외** |
 
 - CoinGecko 약관: <https://www.coingecko.com/en/api_terms> · 표기 가이드: <https://brand.coingecko.com/resources/attribution-guide> · 한도: <https://docs.coingecko.com/docs/common-errors-rate-limit>
 - 위키미디어: 라이선스 <https://ko.wikipedia.org/wiki/위키백과:저작권>, API 이용 정책상 연락처가 포함된 User-Agent 필요 (`.env`의 `CONTACT_EMAIL`)
@@ -63,7 +63,7 @@
 | 단계 | 스크립트 | 호출 규칙 (NF2006) | 재수집 방지 (NF2002) |
 |---|---|---|---|
 | 코인 목록·상세·매핑 | `python -m scripts.collect_coins` | CoinGecko 키 없음 6.5초/키 있음 2초 간격, 429 → 65초 대기(또는 Retry-After) 후 최대 4회 재시도, 5건마다 중간 저장, 실패한 코인은 건너뛰고 다음 실행 때 재시도 | 상세는 24시간 이내 받은 것은 건너뜀 (`--refresh`로 강제) |
-| 항목 자체 문서 | `python -m scripts.collect_item_docs` | 위키 0.5초 간격, User-Agent에 프로젝트명·연락처, 5xx/네트워크 오류 재시도 | `data/docs/manifest.json`에 `item:{lang}:{title}` 키워드 기록 |
+| 항목 자체 문서 | `python -m scripts.collect_item_docs` | 위키 0.5초 간격, User-Agent에 프로젝트명·연락처(없으면 실행 거부), 5xx/네트워크 오류 재시도 | `data/docs/manifest.json`에 `item:{lang}:{title}` 키워드 기록. 위키데이터 연결이 없는 코인은 위키백과 검색(ko "{한글명} 암호화폐" → en "{name} cryptocurrency")으로 자체 문서를 찾고 `item:search` 로 기록 (제목 = 코인 이름·한글명·심볼, 괄호 설명이나 요약에 암호화폐 단서가 있을 때만 채택, 문서의 `search_query` 가 `item:search:…`) |
 | 질문 기반 문서 | (예정) `src/rag/collect.py` | 위와 동일 | manifest 키워드 |
 
 이번 초기 수집은 작업 환경의 셸이 외부 API에 막혀(403, `docs/troubleshooting.md`) **데스크톱 앱 내장 브라우저에서 같은 API를 호출**해 받았다.
@@ -71,10 +71,18 @@
 - 위키 문서 40건: 브라우저가 `collect_item_docs`와 같은 규칙(한국어 우선 → 영어)으로 받은 묶음 파일을 프로젝트의 `docs_store.save_doc`으로 저장 (manifest·라이선스 필드 동일). 이후 갱신은 `collect_item_docs`로 한다.
 - 스냅샷 전용 필드: `source_map.json`의 `page_id/chars/lastrevid`, `search_candidate_*`는 이번 검증 때만 기록했다. `collect_coins`가 새로 매핑하는 코인은 `{title, url}`만 남긴다.
 
+### 백서 수집 규칙 (F2016)
+- 대상: 위키 자체 문서(위키데이터 연결·검색)가 없는 코인 중 CoinGecko 에 백서 링크가 있는 코인 (사용자 PC 실측: 미연결 110개 중 84개, PDF 형태 30 · 웹 54). `--all` 이면 모든 코인.
+- PDF: `pypdf` 로 쪽 단위 텍스트 추출(최대 60쪽·8만 자). 청크는 쪽을 넘지 않게 나누고 메타데이터에 `page`·`file_name` 을 저장해 근거에 "백서 PDF p.N" 으로 표시한다.
+- 웹: HTML 에서 스크립트·메뉴·머리말·꼬리말을 빼고 본문 글자만 추출(최대 8만 자). 위키와 같은 방식으로 청킹.
+- GitHub 미리보기 링크(`/blob/`)는 원본 파일(`raw.githubusercontent.com`)로 바꿔 받고, 폴더 링크(`/tree/`)와 미리보기·로그인 화면 글자가 보이는 페이지는 받지 않는다 (D16). 이미 잘못 받은 문서는 `--prune` 으로 정리.
+- 위키·백서가 모두 없는 코인은 CoinGecko 설명만 쓴다 (D15).
+- 글자가 500자 미만(스크립트로 그리는 페이지, 스캔 PDF)이거나 PDF·HTML 이 아니면 수집하지 않고 `wp:{URL}` 로 기록해 다시 시도하지 않는다. 네트워크 오류는 기록하지 않아 다음 실행 때 재시도한다.
+
 ## 4. 실행 방법 (데이터)
 
 ```bash
-# .env: CONTACT_EMAIL(필수 권장), COINGECKO_DEMO_API_KEY(권장)
+# .env: CONTACT_EMAIL(필수 — 없으면 위키 수집을 하지 않음), COINGECKO_DEMO_API_KEY(권장)
 python -m scripts.collect_coins                 # 약 150건 · 키 있으면 수 분, 키 없으면 공용망에서 수십 분~2시간
 python -m scripts.collect_item_docs --limit 20  # 상위 20개 코인의 자체 위키 문서 (1분 이내)
 python -m scripts.collect_item_docs             # 전체 (문서가 있는 40개 코인)

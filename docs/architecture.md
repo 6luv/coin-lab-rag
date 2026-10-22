@@ -5,6 +5,7 @@ CoinGecko API ──► scripts/collect_coins ──► data/coins.json ──�
 Wikidata P5777 ─┘                              │
                                                ▼
 Wikipedia(ko→en) ─► scripts/collect_item_docs ─► data/docs/wikipedia/{coin_id}_{doc_id}.json + manifest.json
+백서 PDF·웹 ──────► scripts/collect_whitepapers ─► data/docs/whitepaper/… (PDF 는 쪽 단위, git 제외)
                     (질문 시: 프롬프트1 검색어 → 후보 검색 → 프롬프트2 선별 → 즉시 색인, src/rag/collect.py)
                                                ▼
                                      scripts/index_docs ──► Chroma: coin_docs (id=coin:doc:seq)

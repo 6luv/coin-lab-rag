@@ -35,7 +35,8 @@
 | 9 | 특화 기능: 리스크 브리핑, 주장 팩트체크 | `src/rag/graph.py` (mode), `src/data_prep/prompts.py` | F2010 | ✅ (GMS 실호출 전) |
 | 10 | 조건 기반 탐색 (메타 색인 후보 → LLM 선별) | `src/service/recommend.py` | F2011 | ✅ (GMS 실호출 전) |
 | 11 | FastAPI 서버 + HTML 화면 연결 (샘플 모드 포함) | `src/server.py`, `web/` | F2009, F2012, F2013 | ✅ (가짜 LLM으로 화면 연동 확인) |
-| 12 | 심화: MMR(F2014), RAG 전후 비교(F2015), 백서 PDF 결합(F2016) | `docs/rag_comparison.md` | F2014~16 | ⬜ |
+| 12 | 심화: MMR(F2014), RAG 전후 비교(F2015) | `docs/rag_comparison.md` | F2014~15 | ⬜ |
+| 12-1 | 심화: 백서(PDF·웹) 수집·쪽 단위 청킹·출처 종류 표시 | `src/data_prep/whitepaper.py`, `scripts/collect_whitepapers.py` | F2016 | ✅ 코드 · ⬜ 사용자 PC 수집 |
 | 13 | 검증(4장 체크리스트), 문서 정리, 제출 | `docs/verification.md`, README | 4장, 6장 | ⬜ |
 
 ## 3. 요구사항 F2001 ~ F2012 대응 설계

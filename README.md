@@ -21,6 +21,7 @@ scripts/                    수집·색인·점검 스크립트 (아래 실행 �
 data/coins.json             정규화된 코인 150건 (로컬 전용 · git 제외)
 data/source_map.json        코인 → 위키데이터·위키백과 매핑과 사람 검토 결과
 data/docs/wikipedia/        수집한 위키 문서 ({coin_id}_{doc_id}.json) + manifest.json (CC BY-SA 4.0)
+data/docs/whitepaper/       수집한 백서 텍스트 (PDF 는 쪽 단위, 저작권은 각 프로젝트 · git 제외)
 web/                        HTML/CSS/JS 화면, web/sample/ 샘플 모드 데이터 (git 제외)
 tests/                      단위·파이프라인·서버·자동 루프 테스트
 docs/                       계획·데이터 출처·아키텍처·결정·진행·트러블슈팅, docs/reviews/ 검증 기록
@@ -40,7 +41,7 @@ python -m venv .venv
 pip install -r requirements.txt
 copy .env.example .env      # macOS·Linux: cp .env.example .env
 ```
-`.env`에 채울 값: `GMS_KEY`, `COINGECKO_DEMO_API_KEY`(권장), `CONTACT_EMAIL`(위키미디어 User-Agent용)
+`.env`에 채울 값: `GMS_KEY`, `CONTACT_EMAIL`(필수, 위키미디어 User-Agent용 — 없으면 위키 문서를 수집하지 않음), `COINGECKO_DEMO_API_KEY`(권장)
 - GMS 주소는 GMS 안내에 따라 `https://gms.ssafy.io/gmsapi/api.openai.com/v1`을 기본으로 쓰고(채팅은 `/v1/responses`), 키는 환경 변수 `GMS_KEY`로만 읽습니다. 다른 주소를 쓰려면 `OPENAI_BASE_URL`에 적습니다.
 - 모델은 `CHAT_MODEL`(기본 `gpt-4.1-mini`), `EMBEDDING_MODEL`(기본 `text-embedding-3-small`)로 바꿀 수 있습니다.
 
@@ -48,7 +49,8 @@ copy .env.example .env      # macOS·Linux: cp .env.example .env
 ```bash
 python -m scripts.collect_coins             # 코인 150개 목록·상세·위키 매핑 → data/coins.json
 python -m scripts.collect_coins --no-fetch  # API 호출 없이 받아 둔 원본으로 coins.json 만 다시 만들기
-python -m scripts.collect_item_docs         # 코인 자체 위키 문서 (한국어 우선 → 영어)
+python -m scripts.collect_item_docs         # 코인 자체 위키 문서 (한국어 우선 → 영어, 연결 없는 코인은 검색)
+python -m scripts.collect_whitepapers       # 위키 문서가 없는 코인의 백서(PDF·웹) (F2016, git 제외)
 python -m scripts.build_web_sample          # 화면 샘플 데이터 갱신
 ```
 - CoinGecko 키 없는 호출은 공용 IP에서 429가 잦습니다(실측 약 1건/분). Demo 키를 넣으면 2초 간격으로 받습니다.
