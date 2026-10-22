@@ -16,6 +16,9 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--rebuild", action="store_true", help="컬렉션을 비우고 다시 색인 (청크 설정 변경 시)")
     args = ap.parse_args()
+    if store.server_running():
+        print(store.SERVER_BUSY)
+        return 2
 
     col = store.collection("docs")
     if args.rebuild:

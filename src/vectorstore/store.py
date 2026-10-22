@@ -125,3 +125,42 @@ def index_doc(col, doc: dict) -> int:
 def is_doc_indexed(col, coin_id: str, doc_id: str) -> bool:
     got = col._collection.get(where={"$and": [{"coin_id": coin_id}, {"doc_id": doc_id}]}, limit=1, include=[])
     return bool(got["ids"])
+
+
+# --- 서버와 색인 스크립트가 같은 Chroma 를 동시에 쓰지 않게 한다 ---
+# Chroma 는 여러 프로세스의 동시 쓰기를 지원하지 않는다. 서버가 켜진 뒤 다른 프로세스가 청크를 추가하면
+# 서버가 메모리에 든 검색 인덱스에 그 청크가 없어 "Error finding id" 가 난다 (docs/troubleshooting.md).
+SERVER_BUSY = "서버(python -m src.server)가 실행 중입니다. 서버를 끈 뒤 다시 실행하세요. (Chroma 는 여러 프로세스가 동시에 쓰는 것을 지원하지 않습니다)"
+
+
+def _server_lock():
+    return path("chroma_dir") / ".server.json"
+
+
+def mark_server(host: str, port: int) -> None:
+    import json
+
+    p = _server_lock()
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps({"host": host, "port": port}), encoding="utf-8")
+
+
+def clear_server() -> None:
+    _server_lock().unlink(missing_ok=True)
+
+
+def server_running(timeout: float = 0.5) -> bool:
+    """기록된 서버 주소에 실제로 접속되면 실행 중으로 본다 (비정상 종료로 남은 기록은 무시)."""
+    import json
+    import socket
+
+    p = _server_lock()
+    if not p.exists():
+        return False
+    try:
+        info = json.loads(p.read_text(encoding="utf-8"))
+        host = "127.0.0.1" if info.get("host") in ("0.0.0.0", "", None) else info["host"]
+        with socket.create_connection((host, int(info["port"])), timeout=timeout):
+            return True
+    except (OSError, ValueError, KeyError):
+        return False

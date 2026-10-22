@@ -13,6 +13,9 @@ from src.vectorstore import store
 
 
 def main() -> int:
+    if store.server_running():
+        print(store.SERVER_BUSY)
+        return 2
     coins = json.loads(path("coins").read_text(encoding="utf-8"))
     col = store.collection("items")
     ids = [c["coin_id"] for c in coins]

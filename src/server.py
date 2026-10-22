@@ -56,9 +56,31 @@ def _missing_key(_: Request, exc: MissingKeyError):
     return JSONResponse(status_code=503, content={"detail": str(exc)})
 
 
+INDEX_STALE = (
+    "검색 색인이 서버 실행 중에 바뀌었거나 손상됐습니다. 서버를 다시 시작하세요. "
+    "계속되면 서버를 끈 채 python -m scripts.index_docs --rebuild 를 실행하세요."
+)
+
+
+def _is_chroma_internal(exc: Exception) -> bool:
+    try:
+        from chromadb.errors import InternalError
+    except ImportError:
+        return False
+    seen, cur = set(), exc
+    while cur is not None and id(cur) not in seen:  # LangGraph 가 감싸서 올릴 수 있다
+        if isinstance(cur, InternalError):
+            return True
+        seen.add(id(cur))
+        cur = cur.__cause__ or cur.__context__
+    return False
+
+
 @app.exception_handler(Exception)
 def _unexpected(_: Request, exc: Exception):
     log.exception("처리 중 오류")
+    if _is_chroma_internal(exc):
+        return JSONResponse(status_code=503, content={"detail": INDEX_STALE})
     return JSONResponse(status_code=500, content={"detail": "처리 중 오류가 발생했습니다. 잠시 후 다시 시도하세요."})
 
 
@@ -147,7 +169,11 @@ def main() -> None:
     import uvicorn
 
     print(f"Coin Lab: http://{args.host}:{args.port}")
-    uvicorn.run(app, host=args.host, port=args.port)
+    store.mark_server(args.host, args.port)  # 실행 중에는 색인 스크립트가 쓰지 않게 한다
+    try:
+        uvicorn.run(app, host=args.host, port=args.port)
+    finally:
+        store.clear_server()
 
 
 if __name__ == "__main__":
