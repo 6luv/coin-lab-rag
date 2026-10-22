@@ -233,14 +233,19 @@ def collect(coin_id: str, question: str) -> dict:
 
 def _collect_for_question(col, coin: dict, question: str, manifest: dict, report: dict, cfg: dict) -> list[str]:
     coin_id = coin["coin_id"]
-    try:
-        keywords = _search_keywords(coin, question)
-    except MissingKeyError:
-        raise
-    except Exception as e:  # LLM 호출 실패: 수집만 건너뛰고 답변은 기존 문서로 진행
-        log.warning("검색어 추출 실패 (%s): %s", coin_id, type(e).__name__)
-        report["errors"] += 1
-        return []
+    asked = docs_store.question_keywords(manifest, coin_id, question)
+    if asked is not None:  # 같은 질문: 처음 뽑은 검색어를 다시 쓴다 (LLM 이 매번 다른 검색어를 내 재수집되는 것을 막음, NF2002)
+        keywords = asked
+    else:
+        try:
+            keywords = _search_keywords(coin, question)
+        except MissingKeyError:
+            raise
+        except Exception as e:  # LLM 호출 실패: 수집만 건너뛰고 답변은 기존 문서로 진행
+            log.warning("검색어 추출 실패 (%s): %s", coin_id, type(e).__name__)
+            report["errors"] += 1
+            return []
+        docs_store.remember_question(manifest, coin_id, question, keywords)
     known = set(manifest.get(coin_id, {}).get("page_ids", []))
     candidates, seen, searched = [], set(), []
     for kw in keywords:

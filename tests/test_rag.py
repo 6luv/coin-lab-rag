@@ -100,7 +100,7 @@ def test_select_parse_failure_keeps_keyword_open_then_retries(env):
     assert out["errors"] == 1 and "지분증명" not in out["added_titles"]
     assert "q:지분증명" not in docs_store.load_manifest()["ethereum"]["keywords"]
 
-    script('["지분증명"]', "[1]")                            # 정상 응답으로 재시도
+    script("[1]")                                         # 같은 질문이라 검색어는 기록에서 재사용, 선별만 다시
     again = collect.collect("ethereum", "지분증명 전환")
     assert again["skipped_keywords"] == [] and "지분증명" in again["added_titles"]
     assert "q:지분증명" in docs_store.load_manifest()["ethereum"]["keywords"]
@@ -479,3 +479,60 @@ def test_unlinked_coin_falls_back_to_whitepaper_with_page_citation(env, monkeypa
     ans = graph.run("rain", "토큰 소각 구조는?")
     src = ans["sources"][0]
     assert src["source_type"] == "whitepaper_pdf" and src["source_label"] == "백서 PDF" and src["page"] in (1, 7)
+
+
+# --- 서버 실행 중 색인 동시 쓰기 방지 (2026-10-22 "Error finding id") ---
+
+def test_server_lock_detects_running_server(env):
+    import socket
+
+    from src.vectorstore import store
+
+    assert store.server_running() is False                         # 기록 없음
+    srv = socket.socket()
+    srv.bind(("127.0.0.1", 0))
+    srv.listen()
+    store.mark_server("127.0.0.1", srv.getsockname()[1])
+    assert store.server_running() is True
+    srv.close()
+    assert store.server_running() is False                         # 비정상 종료로 남은 기록은 무시
+    store.clear_server()
+
+
+def test_index_scripts_refuse_while_server_running(env, monkeypatch, capsys):
+    from scripts import index_coins, index_docs
+    from src.vectorstore import store
+
+    monkeypatch.setattr(store, "server_running", lambda: True)
+    monkeypatch.setattr("sys.argv", ["index_docs"])
+    assert index_docs.main() == 2 and index_coins.main() == 2
+    assert "서버를 끈 뒤" in capsys.readouterr().out
+
+
+def test_stale_index_error_gives_guidance(env, monkeypatch):
+    from chromadb.errors import InternalError
+    from fastapi.testclient import TestClient
+
+    from src import server
+
+    def broken(*a, **k):
+        try:
+            raise InternalError("Error executing plan: Internal error: Error finding id")
+        except InternalError as e:
+            raise RuntimeError("During task with name 'retrieve'") from e
+
+    monkeypatch.setattr(server.graph, "run", broken)
+    r = TestClient(server.app, raise_server_exceptions=False).post("/api/ask", json={"coin_id": "ethereum", "question": "q"})
+    assert r.status_code == 503 and "서버를 다시 시작" in r.json()["detail"]
+    assert "Error finding id" not in r.text                        # 내부 오류 문구는 노출하지 않음 (NF2004)
+
+
+
+def test_same_question_reuses_keywords_without_new_search(env):
+    script('["지분증명", "레인"]', "[1]")
+    collect.collect("ethereum", "언제 지분증명으로 바뀌었나?")
+    n_search = len(env["search"])
+    script('["완전히 다른 검색어"]', "[1]")                 # LLM 이 이번엔 다른 검색어를 내더라도
+    again = collect.collect("ethereum", "  언제 지분증명으로   바뀌었나? ")   # 공백만 다른 같은 질문
+    assert len(env["search"]) == n_search                 # 새 검색 없음
+    assert set(again["skipped_keywords"]) == {"지분증명", "레인"} and again["keywords"] == []

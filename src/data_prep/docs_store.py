@@ -90,6 +90,19 @@ def save_doc(doc: dict, coin: dict, keyword: str, manifest: dict, is_item_doc: b
     return out
 
 
+def _question_key(question: str) -> str:
+    return re.sub(r"\s+", " ", question).strip().lower()
+
+
+def question_keywords(manifest: dict, coin_id: str, question: str) -> list[str] | None:
+    """이 코인에서 같은 질문을 전에 했으면 그때 뽑은 검색어, 처음이면 None."""
+    return manifest.get(coin_id, {}).get("questions", {}).get(_question_key(question))
+
+
+def remember_question(manifest: dict, coin_id: str, question: str, keywords: list[str]) -> None:
+    _entry(manifest, coin_id).setdefault("questions", {})[_question_key(question)] = list(keywords)
+
+
 def mark_keyword(manifest: dict, coin_id: str, keyword: str) -> None:
     entry = _entry(manifest, coin_id)
     if keyword not in entry["keywords"]:
