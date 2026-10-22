@@ -50,6 +50,7 @@ def _doc_contexts(coin_id: str, query: str, top_k: int, search_type: str) -> lis
             "url": m.get("url", ""),
             "source_type": m.get("source_type", ""),
             "source_label": m.get("source_label") or m.get("source", ""),
+            "page": m.get("page"),
             "key": f"{m.get('doc_id')}:{m.get('chunk_index')}",
             "doc": m.get("doc_id"),
             "pos": m.get("chunk_index", 0),

@@ -59,19 +59,22 @@ def cited_numbers(answer: str) -> set[int]:
     return nums
 
 
+def _label(ctx: dict) -> str:
+    """출처 종류 라벨. PDF 근거는 쪽 번호를 붙인다 (F2016)."""
+    return f"{ctx['source_label']} p.{ctx['page']}" if ctx.get("page") else ctx["source_label"]
+
+
 def generate_node(state: RagState) -> RagState:
     coin = catalog.get(state["coin_id"])
     contexts = state["contexts"]
-    block = "\n\n".join(
-        f"[근거 {c['index']}] ({c['source_label']}) {c['title']}\n{c['text']}" for c in contexts
-    )
+    block = "\n\n".join(f"[근거 {c['index']}] ({_label(c)}) {c['title']}\n{c['text']}" for c in contexts)
     answer = llm.ask(
         prompts.ANSWER_SYSTEM,
         prompts.ANSWER_USER.format(label=coin["label"], contexts=block, task=_task(state)),
     )
     used = cited_numbers(answer)
     sources = [
-        {k: c[k] for k in ("index", "title", "url", "source_type", "source_label")}
+        {k: c.get(k) for k in ("index", "title", "url", "source_type", "source_label", "page")}
         for c in contexts
         if c["index"] in used
     ]

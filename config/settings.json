@@ -39,7 +39,10 @@
     "coingecko_interval_sec": 6.5,
     "coingecko_interval_with_key_sec": 2.0,
     "coingecko_429_wait_sec": 65,
-    "wiki_interval_sec": 0.5
+    "wiki_interval_sec": 0.5,
+    "whitepaper_interval_sec": 1.0,
+    "whitepaper_max_wait_sec": 30,
+    "whitepaper_timeout_sec": 20
   },
   "models": {
     "base_url": "https://gms.ssafy.io/gmsapi/api.openai.com/v1",
@@ -52,6 +55,10 @@
     "max_keywords": 4,
     "candidates_per_keyword": 5,
     "max_new_docs": 3,
-    "min_doc_chars": 300
+    "min_doc_chars": 300,
+    "whitepaper_max_mb": 20,
+    "whitepaper_max_pages": 60,
+    "whitepaper_max_chars": 80000,
+    "whitepaper_min_chars": 500
   }
 }

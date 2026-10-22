@@ -66,6 +66,14 @@ def main() -> int:
     item_docs = sum(1 for d in docs if d.get("is_item_doc"))
     missing_src = [d["title"] for d in docs if not (d.get("url") and d.get("source") and d.get("license"))]
     print(f"[F2004/F2005] 저장 문서 {len(docs)}건 (항목 자체 문서 {item_docs}) → 청크 {total_chunks}개 (size={size}, overlap={overlap})")
+    kinds = {}
+    for d in docs:
+        kinds[d.get("source_type", "?")] = kinds.get(d.get("source_type", "?"), 0) + 1
+    covered = {d["coin_id"] for d in docs if d.get("is_item_doc")}
+    print(f"[F2016] 출처 종류별 문서: {', '.join(f'{k} {v}' for k, v in sorted(kinds.items())) or '-'}")
+    print(f"[전제] 자체 설명 문서(위키·백서)가 있는 코인 {len(covered)} / {len(coins)}"
+          + ("" if len(covered) == len(coins) else
+             f"  · 나머지 {len(coins) - len(covered)}개는 위키·백서가 없어 CoinGecko 설명만 사용 (D15, 실패 아님)"))
     if not docs:
         print("  미검증: 아직 수집한 문서가 없습니다. python -m scripts.collect_item_docs --limit 20 으로 위키 문서를 받으세요.")
     print(f"[NF2007] 출처/URL/라이선스 누락 문서: {len(missing_src)}건")

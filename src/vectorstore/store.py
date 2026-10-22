@@ -57,10 +57,17 @@ def splitter():
 
 
 def chunk_doc(doc: dict) -> list[tuple[str, str, dict]]:
-    """문서 1건 → [(chunk_id, text, metadata)]"""
-    parts = splitter().split_text(doc["text"])
+    """문서 1건 → [(chunk_id, text, metadata)]
+
+    PDF 처럼 쪽 정보(`pages`)가 있으면 쪽마다 따로 나눠 청크가 쪽을 넘지 않게 하고 쪽 번호를 저장한다 (F2016).
+    """
+    split = splitter().split_text
+    if doc.get("pages"):
+        parts = [(p["page"], t) for p in doc["pages"] for t in split(p["text"])]
+    else:
+        parts = [(None, t) for t in split(doc["text"])]
     out = []
-    for i, text in enumerate(parts):
+    for i, (page, text) in enumerate(parts):
         meta = {
             "coin_id": doc["coin_id"],
             "related_coin": doc["related_coin"],
@@ -75,6 +82,9 @@ def chunk_doc(doc: dict) -> list[tuple[str, str, dict]]:
             "collected_at": doc.get("collected_at", ""),
             "chunk_index": i,
         }
+        if page is not None:  # Chroma 메타데이터는 None 을 받지 않는다
+            meta["page"] = page
+            meta["file_name"] = doc.get("file_name", "")
         out.append((f"{doc['coin_id']}:{doc['doc_id']}:{i}", text, meta))
     return out
 

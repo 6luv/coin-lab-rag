@@ -1,6 +1,7 @@
 """수집한 외부 문서 저장소 (파일 + manifest).
 
-파일: data/docs/wikipedia/{coin_id}_{doc_id}.json  (doc_id = "wikipedia_ko-123": 언어가 달라도 겹치지 않는다)
+파일: data/docs/{종류}/{coin_id}_{doc_id}.json  (doc_id = "wikipedia_ko-123", "whitepaper_pdf-…": 종류·언어가 달라도 겹치지 않는다)
+종류: wikipedia(위키백과, CC BY-SA — git 포함), whitepaper(백서 PDF·웹, 저작권은 각 프로젝트 — git 제외)
 manifest: 코인별로 이미 검색한 키워드·수집한 문서를 기록해 재수집을 막는다. (NF2002)
 검색어 완료 기록(mark_keyword)은 문서 저장과 분리해, 수집·색인이 모두 성공했을 때만 호출한다.
 """
@@ -14,6 +15,13 @@ from pathlib import Path
 from src.config import path
 
 _UNSAFE = re.compile(r'[\\/:*?"<>|\s()]+')
+
+
+KINDS = ("wikipedia", "whitepaper")
+
+
+def kind_of(source_type: str) -> str:
+    return "whitepaper" if (source_type or "").startswith("whitepaper") else "wikipedia"
 
 
 def docs_dir(kind: str = "wikipedia") -> Path:
@@ -43,8 +51,8 @@ def already_collected(manifest: dict, coin_id: str, keyword: str) -> bool:
     return keyword in manifest.get(coin_id, {}).get("keywords", [])
 
 
-def doc_path(coin_id: str, doc_id: str) -> Path:
-    return docs_dir() / f"{coin_id}_{safe_name(doc_id)}.json"
+def doc_path(coin_id: str, doc_id: str, kind: str | None = None) -> Path:
+    return docs_dir(kind or kind_of(doc_id)) / f"{coin_id}_{safe_name(doc_id)}.json"
 
 
 def _entry(manifest: dict, coin_id: str) -> dict:
@@ -69,6 +77,9 @@ def save_doc(doc: dict, coin: dict, keyword: str, manifest: dict, is_item_doc: b
         "lastrevid": doc.get("lastrevid"),
         "collected_at": date.today().isoformat(),
     }
+    if doc.get("pages"):  # PDF: 쪽 단위 텍스트와 파일명 (근거에 쪽 번호를 붙인다)
+        record["pages"] = doc["pages"]
+        record["file_name"] = doc.get("file_name", "")
     out = doc_path(coin["coin_id"], record["doc_id"])
     out.write_text(json.dumps(record, ensure_ascii=False, indent=1), encoding="utf-8")
     entry = _entry(manifest, coin["coin_id"])
@@ -85,10 +96,11 @@ def mark_keyword(manifest: dict, coin_id: str, keyword: str) -> None:
         entry["keywords"].append(keyword)
 
 
-def iter_docs(kind: str = "wikipedia"):
-    """(coin_id, doc_id) 당 한 건. 이름 규칙이 같은 새 파일을 우선한다."""
+def iter_docs(kind: str | None = None):
+    """(coin_id, doc_id) 당 한 건. kind 를 주지 않으면 모든 종류. 이름 규칙이 같은 새 파일을 우선한다."""
     picked: dict[tuple, tuple[bool, dict]] = {}
-    for f in sorted(docs_dir(kind).glob("*.json")):
+    files = [f for k in ([kind] if kind else KINDS) for f in sorted(docs_dir(k).glob("*.json"))]
+    for f in files:
         d = json.loads(f.read_text(encoding="utf-8"))
         key = (d.get("coin_id"), d.get("doc_id"))
         is_new_name = f == doc_path(*key) if all(key) else False
@@ -113,7 +125,7 @@ def migrate_filenames(manifest: dict, kind: str = "wikipedia") -> int:
             f.rename(target)
             moved += 1
     files: dict[str, list[dict]] = {}
-    for d in iter_docs(kind):
+    for d in iter_docs():  # manifest 문서 목록은 모든 종류 기준
         files.setdefault(d["coin_id"], []).append(d)
     for coin_id, entry in manifest.items():
         docs = files.get(coin_id, [])

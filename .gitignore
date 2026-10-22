@@ -13,3 +13,8 @@ data/chroma/
 data/raw/
 data/coins.json
 web/sample/coins_sample.js
+
+# 백서 원문: 저작권은 각 프로젝트 → 저장소에 올리지 않고 각자 collect_whitepapers 로 받는다 (docs/data_sources.md)
+data/docs/whitepaper/
+
+docs/reviews
