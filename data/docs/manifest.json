@@ -469,5 +469,785 @@
   "page_ids": [
    "wikipedia_en-61225478"
   ]
+ },
+ "figure-heloc": {
+  "keywords": [
+   "wp:https://www.figure.com/about/"
+  ],
+  "titles": [
+   "Figure Heloc 백서 — About Us | FigureFigure LogoFigure Logo$30B+ in Equity unlocked with Figure's pl"
+  ],
+  "page_ids": [
+   "whitepaper_web-7ebdda0ce95e"
+  ]
+ },
+ "hyperliquid": {
+  "keywords": [
+   "wp:https://hyperliquid.gitbook.io/hyperliquid-docs"
+  ],
+  "titles": [
+   "Hyperliquid 백서 — About Hyperliquid | Hyperliquid Docs"
+  ],
+  "page_ids": [
+   "whitepaper_web-cd472cc08d52"
+  ]
+ },
+ "usds": {
+  "keywords": [
+   "wp:https://developers.sky.money/"
+  ],
+  "titles": [],
+  "page_ids": []
+ },
+ "whitebit": {
+  "keywords": [
+   "wp:https://cdn.whitebit.com/wbt/whitepaper-en.pdf"
+  ],
+  "titles": [
+   "WhiteBIT Coin 백서"
+  ],
+  "page_ids": [
+   "whitepaper_pdf-1725d6dc1413"
+  ]
+ },
+ "leo-token": {
+  "keywords": [
+   "wp:https://www.bitfinex.com/wp-2019-05.pdf"
+  ],
+  "titles": [
+   "LEO Token 백서"
+  ],
+  "page_ids": [
+   "whitepaper_pdf-b75648043319"
+  ]
+ },
+ "rain": {
+  "keywords": [
+   "wp:https://whitepaper.rain.one"
+  ],
+  "titles": [
+   "Rain 백서"
+  ],
+  "page_ids": [
+   "whitepaper_pdf-14e0f9d5b408"
+  ]
+ },
+ "ethena-usde": {
+  "keywords": [
+   "wp:https://ethena-labs.gitbook.io/"
+  ],
+  "titles": [
+   "Ethena USDe 백서 — Ethena Overview | Ethena"
+  ],
+  "page_ids": [
+   "whitepaper_web-595ef106a6e9"
+  ]
+ },
+ "canton-network": {
+  "keywords": [
+   "wp:https://www.canton.network/whitepapers"
+  ],
+  "titles": [
+   "Canton 백서 — Canton Network Whitepaperslinkedin-in iconFollow us on Facebook"
+  ],
+  "page_ids": [
+   "whitepaper_web-013634c3b0a3"
+  ]
+ },
+ "the-open-network": {
+  "keywords": [
+   "wp:https://ton.org/whitepaper.pdf"
+  ],
+  "titles": [
+   "Gram (prev. Toncoin) 백서"
+  ],
+  "page_ids": [
+   "whitepaper_pdf-92c35dc18b3a"
+  ]
+ },
+ "tether-gold": {
+  "keywords": [
+   "wp:https://gold.tether.to/Relevant%20Information%20Document%20-%20TG%20Commodities,%20S.A.%20de%20C.V.%20(ENG).pdf"
+  ],
+  "titles": [
+   "Tether Gold 백서"
+  ],
+  "page_ids": [
+   "whitepaper_pdf-950a644cfac0"
+  ]
+ },
+ "global-dollar": {
+  "keywords": [
+   "wp:https://424565.fs1.hubspotusercontent-na1.net/hubfs/424565/USDGWhitePaper.pdf"
+  ],
+  "titles": [
+   "Global Dollar 백서"
+  ],
+  "page_ids": [
+   "whitepaper_pdf-7f9bf925c999"
+  ]
+ },
+ "bittensor": {
+  "keywords": [
+   "wp:https://bittensor.com/whitepaper"
+  ],
+  "titles": [
+   "Bittensor 백서 — Whitepaper — A Peer-to-Peer Intelligence Market — Bittensor"
+  ],
+  "page_ids": [
+   "whitepaper_web-61e0d5b11599"
+  ]
+ },
+ "crypto-com-chain": {
+  "keywords": [
+   "wp:https://whitepaper.cronos.org/"
+  ],
+  "titles": [],
+  "page_ids": []
+ },
+ "paypal-usd": {
+  "keywords": [
+   "wp:https://developer.paypal.com/dev-center/pyusd/"
+  ],
+  "titles": [],
+  "page_ids": []
+ },
+ "ethena": {
+  "keywords": [
+   "wp:https://ethena-labs.gitbook.io/"
+  ],
+  "titles": [
+   "Ethena 백서 — Ethena Overview | Ethena"
+  ],
+  "page_ids": [
+   "whitepaper_web-595ef106a6e9"
+  ]
+ },
+ "bitway": {
+  "keywords": [
+   "wp:https://docs.bitway.com/"
+  ],
+  "titles": [
+   "Bitway 백서 — Bitway: Internet Capital Gateway | Bitway"
+  ],
+  "page_ids": [
+   "whitepaper_web-1050899b240f"
+  ]
+ },
+ "hashnote-usyc": {
+  "keywords": [
+   "wp:https://developers.circle.com/tokenized/usyc/overview?_gl=1*1tinvsh*_gcl_au*MTc2OTc4MTMzNC4xNzcxOTYwMzk0*_ga*MTA4NzQzMjI0MS4xNzcxOTYwMzk0*_ga_GJDVPCQNRV*czE3NzE5NjAzOTIkbzEkZzEkdDE3NzE5NjA0NDkkajQ2JGwwJGgw"
+  ],
+  "titles": [
+   "Circle USYC 백서 — USYC overview - Circle Docs"
+  ],
+  "page_ids": [
+   "whitepaper_web-f276a5f88113"
+  ]
+ },
+ "ondo-us-dollar-yield": {
+  "keywords": [
+   "wp:https://docs.ondo.finance/general-access-products/usdy/basics"
+  ],
+  "titles": [
+   "Ondo US Dollar Yield 백서 — USDY Basics - Ondo Finance"
+  ],
+  "page_ids": [
+   "whitepaper_web-09a60c025699"
+  ]
+ },
+ "ripple-usd": {
+  "keywords": [
+   "wp:https://docs.ripple.com/"
+  ],
+  "titles": [
+   "Ripple USD 백서 — Ripple documentation"
+  ],
+  "page_ids": [
+   "whitepaper_web-27237e0540ed"
+  ]
+ },
+ "ondo-finance": {
+  "keywords": [
+   "wp:https://blog.ondo.foundation/unlocking-ondo-a-proposal-from-the-ondo-foundation/"
+  ],
+  "titles": [
+   "Ondo 백서 — Unlocking ONDO: A Proposal from the Ondo Foundation"
+  ],
+  "page_ids": [
+   "whitepaper_web-b33cc5b3b3d7"
+  ]
+ },
+ "blackrock-usd-institutional-digital-liquidity-fund": {
+  "keywords": [
+   "wp:https://securitize.io/blackrock/buidl"
+  ],
+  "titles": [],
+  "page_ids": []
+ },
+ "aster-2": {
+  "keywords": [
+   "wp:https://docs.asterdex.com/usdaster"
+  ],
+  "titles": [
+   "Aster 백서 — Overview | Aster"
+  ],
+  "page_ids": [
+   "whitepaper_web-6fdcbdafb623"
+  ]
+ },
+ "falcon-finance": {
+  "keywords": [
+   "wp:https://falcon.finance/whitepaper-en.pdf"
+  ],
+  "titles": [
+   "Falcon USD 백서"
+  ],
+  "page_ids": [
+   "whitepaper_pdf-813db70bb618"
+  ]
+ },
+ "mantle": {
+  "keywords": [
+   "wp:https://docs.mantle.xyz/network/introduction/overview"
+  ],
+  "titles": [],
+  "page_ids": []
+ },
+ "pax-gold": {
+  "keywords": [
+   "wp:https://www.paxos.com/pax-gold"
+  ],
+  "titles": [
+   "PAX Gold 백서 — Paxos | Pax Gold (PAXG)"
+  ],
+  "page_ids": [
+   "whitepaper_web-6e1ee8e27e29"
+  ]
+ },
+ "usdd": {
+  "keywords": [
+   "wp:https://docs.usdd.io/"
+  ],
+  "titles": [
+   "USDD 백서 — What is the new version of USDD? | USDD Docs"
+  ],
+  "page_ids": [
+   "whitepaper_web-801bbb1faae0"
+  ]
+ },
+ "memecore": {
+  "keywords": [
+   "wp:https://docs.memecore.com/"
+  ],
+  "titles": [
+   "MemeCore 백서 — What is MemeCore? | MemeCore Docs"
+  ],
+  "page_ids": [
+   "whitepaper_web-64da2750a13d"
+  ]
+ },
+ "morpho": {
+  "keywords": [
+   "wp:https://github.com/morpho-org/morpho-blue/blob/main/morpho-blue-whitepaper.pdf"
+  ],
+  "titles": [
+   "Morpho 백서"
+  ],
+  "page_ids": [
+   "whitepaper_pdf-6b014cc350d1"
+  ]
+ },
+ "internet-computer": {
+  "keywords": [
+   "wp:https://internetcomputer.org/whitepaper.pdf"
+  ],
+  "titles": [
+   "Internet Computer 백서"
+  ],
+  "page_ids": [
+   "whitepaper_pdf-28b6c44fd16c"
+  ]
+ },
+ "htx-dao": {
+  "keywords": [
+   "wp:https://htxdao.gitbook.io/whitepaper/"
+  ],
+  "titles": [
+   "HTX DAO 백서 — HTX DAO Whitepaper | Whitepaper"
+  ],
+  "page_ids": [
+   "whitepaper_web-289e8f622109"
+  ]
+ },
+ "bitget-token": {
+  "keywords": [
+   "wp:https://www.bitget.com/cdnstatic/files/BGB-whitepaper-en.pdf"
+  ],
+  "titles": [
+   "Bitget Token 백서"
+  ],
+  "page_ids": [
+   "whitepaper_pdf-10725a12555e"
+  ]
+ },
+ "just": {
+  "keywords": [
+   "wp:https://www.just.network/docs/white_paper_en.pdf"
+  ],
+  "titles": [
+   "JUST 백서"
+  ],
+  "page_ids": [
+   "whitepaper_pdf-bb53f8f1433c"
+  ]
+ },
+ "polygon-ecosystem-token": {
+  "keywords": [
+   "wp:https://polygon.technology/papers/pol-whitepaper"
+  ],
+  "titles": [],
+  "page_ids": []
+ },
+ "render-token": {
+  "keywords": [
+   "wp:http://renderfoundation.com/whitepaper"
+  ],
+  "titles": [
+   "Render 백서 — Render Whitepaper | Render Foundation"
+  ],
+  "page_ids": [
+   "whitepaper_web-c3a0139c0bec"
+  ]
+ },
+ "lighter": {
+  "keywords": [
+   "wp:https://docs.lighter.xyz/"
+  ],
+  "titles": [
+   "Lighter 백서 — Introduction | Lighter DocsGitBook AssistantGitBook Assistantarrow-up-right-and-"
+  ],
+  "page_ids": [
+   "whitepaper_web-98134e2d3280"
+  ]
+ },
+ "pi-network": {
+  "keywords": [
+   "wp:https://minepi.com/white-paper/"
+  ],
+  "titles": [
+   "Pi Network 백서 — Pi Cryptocurrency White Paper | Pi Network"
+  ],
+  "page_ids": [
+   "whitepaper_web-3cb51a778c0b"
+  ]
+ },
+ "injective-protocol": {
+  "keywords": [
+   "wp:https://injective.com/Injective-A-Finance-Native-Layer-1-Blockchain.pdf"
+  ],
+  "titles": [
+   "Injective 백서"
+  ],
+  "page_ids": [
+   "whitepaper_pdf-edcf838e7374"
+  ]
+ },
+ "nexo": {
+  "keywords": [
+   "wp:https://nexo.io/assets/downloads/Nexo-Whitepaper.pdf?=1"
+  ],
+  "titles": [
+   "NEXO 백서 — Nexo: Your Wealth Platform for Digital Assets"
+  ],
+  "page_ids": [
+   "whitepaper_web-31d1e7fb8905"
+  ]
+ },
+ "aerodrome-finance": {
+  "keywords": [
+   "wp:https://aerodrome.finance/docs"
+  ],
+  "titles": [],
+  "page_ids": []
+ },
+ "superstate-short-duration-us-government-securities-fund-ustb": {
+  "keywords": [
+   "wp:https://docs.superstate.com/investors/tokenized-funds/invesco-ustb"
+  ],
+  "titles": [
+   "Invesco Short Duration US Government Securities Fund 백서 — Invesco USTB | Superstate"
+  ],
+  "page_ids": [
+   "whitepaper_web-4b8bf079d1e9"
+  ]
+ },
+ "layerzero": {
+  "keywords": [
+   "wp:https://layerzero.network/publications/LayerZero_Whitepaper_V2.1.1.pdf"
+  ],
+  "titles": [
+   "LayerZero 백서"
+  ],
+  "page_ids": [
+   "whitepaper_pdf-75349b8299a4"
+  ]
+ },
+ "aptos": {
+  "keywords": [
+   "wp:https://github.com/aptos-labs/developer-docs/blob/main/static/papers/Aptos-Whitepaper.pdf"
+  ],
+  "titles": [],
+  "page_ids": []
+ },
+ "gho": {
+  "keywords": [
+   "wp:https://github.com/aave/gho-core/blob/main/techpaper/GHO_Technical_Paper.pdf"
+  ],
+  "titles": [
+   "GHO 백서"
+  ],
+  "page_ids": [
+   "whitepaper_pdf-b9ec3e502810"
+  ]
+ },
+ "xdce-crowd-sale": {
+  "keywords": [
+   "wp:https://www.xinfin.io/#white-paper"
+  ],
+  "titles": [
+   "XDC Network 백서 — Decentralized Smart Contracts Platform"
+  ],
+  "page_ids": [
+   "whitepaper_web-d960aa63607e"
+  ]
+ },
+ "ether-fi": {
+  "keywords": [
+   "wp:https://etherfi.gitbook.io/etherfi/ether.fi-whitepaper"
+  ],
+  "titles": [
+   "Ether.fi 백서 — About ether.fi | ether.fi"
+  ],
+  "page_ids": [
+   "whitepaper_web-9ec2ba4c9a62"
+  ]
+ },
+ "vechain": {
+  "keywords": [
+   "wp:https://vechain.org/wp-content/uploads/2023/10/vechain-whitepaper-3-0.pdf"
+  ],
+  "titles": [],
+  "page_ids": []
+ },
+ "curve-dao-token": {
+  "keywords": [
+   "wp:https://docs.curve.finance/"
+  ],
+  "titles": [
+   "Curve DAO 백서 — Curve Knowledge Hub"
+  ],
+  "page_ids": [
+   "whitepaper_web-6e0e1711bc09"
+  ]
+ },
+ "celestia": {
+  "keywords": [
+   "wp:https://docs.celestia.org/learn/TIA/overview/"
+  ],
+  "titles": [
+   "Celestia 백서 — Overview of TIA - Celestia Docs"
+  ],
+  "page_ids": [
+   "whitepaper_web-dfb95173a8b9"
+  ]
+ },
+ "beldex": {
+  "keywords": [
+   "wp:https://beldex.io/whitepaper.pdf"
+  ],
+  "titles": [
+   "Beldex 백서"
+  ],
+  "page_ids": [
+   "whitepaper_pdf-f9c3aa12fd4e"
+  ]
+ },
+ "flare-networks": {
+  "keywords": [
+   "wp:https://flare.network/whitepapers"
+  ],
+  "titles": [
+   "Flare 백서 — Whitepapers | Flare"
+  ],
+  "page_ids": [
+   "whitepaper_web-30c7d14f17d9"
+  ]
+ },
+ "usual-usd": {
+  "keywords": [
+   "wp:https://docs.usual.money/"
+  ],
+  "titles": [
+   "Usual USD 백서 — What is Usual? | Usual Docs"
+  ],
+  "page_ids": [
+   "whitepaper_web-4c959213ec7d"
+  ]
+ },
+ "kinesis-gold": {
+  "keywords": [
+   "wp:https://kinesis.money/resources/kinesis-whitepaper-en.pdf"
+  ],
+  "titles": [
+   "Kinesis Gold 백서"
+  ],
+  "page_ids": [
+   "whitepaper_pdf-6e6fd8a000e1"
+  ]
+ },
+ "eutbl": {
+  "keywords": [
+   "wp:https://docs.spiko.xyz"
+  ],
+  "titles": [],
+  "page_ids": []
+ },
+ "quack-ai": {
+  "keywords": [
+   "wp:https://quackai.gitbook.io/docs"
+  ],
+  "titles": [
+   "Quack AI 백서 — Start Here | Quack AI"
+  ],
+  "page_ids": [
+   "whitepaper_web-3940ff318caa"
+  ]
+ },
+ "akedo": {
+  "keywords": [
+   "wp:https://akedo-1.gitbook.io/akedo-whitepaper"
+  ],
+  "titles": [
+   "Akedo 백서 — Overview | Akedo Whitepaper"
+  ],
+  "page_ids": [
+   "whitepaper_web-217808c321f3"
+  ]
+ },
+ "true-usd": {
+  "keywords": [
+   "wp:https://tusd.io/docs/trueusd-white-paper-202602.pdf"
+  ],
+  "titles": [
+   "TrueUSD 백서"
+  ],
+  "page_ids": [
+   "whitepaper_pdf-e5153ca36299"
+  ]
+ },
+ "grass": {
+  "keywords": [
+   "wp:https://wynd-network.gitbook.io/grass-docs"
+  ],
+  "titles": [
+   "Grass 백서 — Getting Started | Grass"
+  ],
+  "page_ids": [
+   "whitepaper_web-9fc894c5dff4"
+  ]
+ },
+ "stable-2": {
+  "keywords": [
+   "wp:https://www.stable.xyz/whitepaper.pdf"
+  ],
+  "titles": [
+   "​​Stable 백서"
+  ],
+  "page_ids": [
+   "whitepaper_pdf-e2200d596765"
+  ]
+ },
+ "virtual-protocol": {
+  "keywords": [
+   "wp:https://whitepaper.virtuals.io/"
+  ],
+  "titles": [
+   "Virtuals Protocol 백서 — About Virtuals Protocol | Virtuals Protocol Whitepaper"
+  ],
+  "page_ids": [
+   "whitepaper_web-7ca3e54c3bb1"
+  ]
+ },
+ "fetch-ai": {
+  "keywords": [
+   "wp:https://docs.superintelligence.io/artificial-superintelligence-alliance/vision-paper"
+  ],
+  "titles": [
+   "Artificial Superintelligence Alliance 백서 — Vision Paper | Artificial Superintelligence Alliance"
+  ],
+  "page_ids": [
+   "whitepaper_web-7e77f7137353"
+  ]
+ },
+ "starknet": {
+  "keywords": [
+   "wp:https://docs.starknet.io/learn/protocol/intro"
+  ],
+  "titles": [
+   "Starknet 백서 — Introduction to Starknet's protocol - Starknet Documentation"
+  ],
+  "page_ids": [
+   "whitepaper_web-269802656f32"
+  ]
+ },
+ "sei-network": {
+  "keywords": [
+   "wp:https://github.com/sei-protocol/sei-chain/blob/main/whitepaper/Sei_Whitepaper.pdf"
+  ],
+  "titles": [
+   "Sei 백서"
+  ],
+  "page_ids": [
+   "whitepaper_pdf-effd74deb5c9"
+  ]
+ },
+ "derive": {
+  "keywords": [
+   "wp:https://www.derive.xyz/files/v2-whitepaper.pdf"
+  ],
+  "titles": [],
+  "page_ids": []
+ },
+ "pendle": {
+  "keywords": [
+   "wp:https://github.com/pendle-finance/pendle-v2-resources/tree/main/whitepapers"
+  ],
+  "titles": [],
+  "page_ids": []
+ },
+ "bittorrent": {
+  "keywords": [
+   "wp:https://bt.io/doc/BitTorrent-ChainWhitepaper_EN.pdf"
+  ],
+  "titles": [
+   "BitTorrent 백서"
+  ],
+  "page_ids": [
+   "whitepaper_pdf-b83952f6585a"
+  ]
+ },
+ "plasma": {
+  "keywords": [
+   "wp:https://docs.plasma.to/"
+  ],
+  "titles": [
+   "Plasma 백서 — Start here - Plasma chain docs"
+  ],
+  "page_ids": [
+   "whitepaper_web-8fd0296f28cd"
+  ]
+ },
+ "falcon-finance-ff": {
+  "keywords": [
+   "wp:https://falcon.finance/whitepaper-v2.pdf"
+  ],
+  "titles": [
+   "Falcon Finance 백서"
+  ],
+  "page_ids": [
+   "whitepaper_pdf-7ce723d3a890"
+  ]
+ },
+ "re-protocol-reusd": {
+  "keywords": [
+   "wp:https://docs.re.xyz"
+  ],
+  "titles": [
+   "Re Protocol reUSD 백서 — What Re is | Re Protocol Docs"
+  ],
+  "page_ids": [
+   "whitepaper_web-35c2bb7fc7b5"
+  ]
+ },
+ "spx6900": {
+  "keywords": [
+   "wp:https://www.spx6900.com"
+  ],
+  "titles": [],
+  "page_ids": []
+ },
+ "unibase": {
+  "keywords": [
+   "wp:https://openos-labs.gitbook.io/unibase-docs/"
+  ],
+  "titles": [],
+  "page_ids": []
+ },
+ "ousg": {
+  "keywords": [
+   "wp:https://docs.ondo.finance/qualified-access-products/ousg"
+  ],
+  "titles": [
+   "Ondo Short-Term U.S. Government Bond Fund 백서 — Overview - Ondo Finance"
+  ],
+  "page_ids": [
+   "whitepaper_web-d1956b97fc2e"
+  ]
+ },
+ "sun-token": {
+  "keywords": [
+   "wp:https://sun.io/docs/SUN_V3_Whitepaper_en.pdf"
+  ],
+  "titles": [
+   "Sun Token 백서"
+  ],
+  "page_ids": [
+   "whitepaper_pdf-7bc4a5f81b95"
+  ]
+ },
+ "olympus": {
+  "keywords": [
+   "wp:https://docs.olympusdao.finance/"
+  ],
+  "titles": [
+   "Olympus 백서 — Olympus Docs | Olympus DocsOpen What is Olympus Protocol?Open What is Range Boun"
+  ],
+  "page_ids": [
+   "whitepaper_web-4b13aa592ad8"
+  ]
+ },
+ "kite-2": {
+  "keywords": [
+   "wp:https://gokite.ai/kite-whitepaper"
+  ],
+  "titles": [
+   "Kite 백서 — Kite Whitepaper | Kite AI"
+  ],
+  "page_ids": [
+   "whitepaper_web-7ecd7052e947"
+  ]
+ },
+ "optimism": {
+  "keywords": [
+   "wp:https://docs.optimism.io/"
+  ],
+  "titles": [
+   "Optimism 백서 — Optimism Documentation"
+  ],
+  "page_ids": [
+   "whitepaper_web-38185a2ae1e9"
+  ]
+ },
+ "conflux-token": {
+  "keywords": [
+   "wp:https://confluxnetwork.org/files/Conflux_Economic_Paper_20201230.pdf"
+  ],
+  "titles": [
+   "Conflux 백서"
+  ],
+  "page_ids": [
+   "whitepaper_pdf-3d3948b29aad"
+  ]
  }
 }
