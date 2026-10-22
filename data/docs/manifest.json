@@ -131,7 +131,11 @@
  },
  "dogecoin": {
   "keywords": [
-   "item:ko:도지코인"
+   "item:ko:도지코인",
+   "q:도지코인",
+   "q:billy markus",
+   "q:jackson palmer",
+   "q:2013년"
   ],
   "titles": [
    "도지코인"
@@ -164,7 +168,12 @@
  },
  "cardano": {
   "keywords": [
-   "item:ko:카르다노 (블록체인 플랫폼)"
+   "item:ko:카르다노 (블록체인 플랫폼)",
+   "q:카르다노",
+   "q:바이런 단계",
+   "q:셸리 단계",
+   "q:스마트 계약",
+   "q:스마트 계약 플랫폼"
   ],
   "titles": [
    "카르다노 (블록체인 플랫폼)"
