@@ -236,7 +236,7 @@ function renderMarkdown(markdown) {
 function mergeSources(sources) {
   const merged = new Map();
   for (const source of sources) {
-    const key = `${source.title}|${source.source_type}|${source.url}`;
+    const key = `${source.title}|${source.source_type}|${source.url}|${source.page ?? ""}`;
     if (!merged.has(key)) merged.set(key, { ...source, indexes: [] });
     merged.get(key).indexes.push(source.index);
   }
@@ -301,7 +301,7 @@ function renderChat() {
   }
   const items = chatHistory(state.coinId);
   if (!items.length && !state.offline) {
-    container.appendChild(el("p", "caption", "질문을 하면 관련 문서를 수집한 뒤 근거와 함께 답합니다."));
+    container.appendChild(el("p", "caption", "첫 질문을 하면 관련 문서를 수집한 뒤 근거와 함께 답합니다."));
   }
   for (const message of items) container.appendChild(messageElement(message));
   $("clear-button").classList.toggle("hidden", !items.length);
@@ -801,6 +801,7 @@ async function loadStatus() {
     $("index-status").textContent = `INDEX · ${idx.coin_meta} coins · ${idx.coin_docs} chunks · ${status.chat_model}`;
     const warnings = [];
     if (!status.api_key) warnings.push("GMS_KEY가 설정되지 않았습니다. .env를 확인하세요.");
+    if (status.contact === false) warnings.push("CONTACT_EMAIL이 없어 질문할 때 위키 문서를 새로 수집하지 않습니다. .env에 이메일을 넣으세요.");
     if (!idx.coin_meta) warnings.push("코인 색인이 없습니다. python -m scripts.index_coins 를 실행하세요.");
     if (!idx.coin_docs) warnings.push("문서 색인이 비어 있어 사실 질문이 '문서로 확인 불가'로 나옵니다. python -m scripts.index_docs 를 실행하세요.");
     $("setup-warning").textContent = warnings.join(" ");
@@ -846,6 +847,8 @@ function miniSpark(values, cls) {
 
 function renderCoinGrid() {
   const grid = $("coin-grid");
+  const more = $("more-coins"); // 리스트 안에 있으므로 비우기 전에 잡아 둔다
+  const keep = grid.scrollTop; // "더 보기" 후에도 보던 위치 유지
   grid.replaceChildren();
   const list = [...state.coins].sort((a, b) => (a.market_cap_rank ?? 9999) - (b.market_cap_rank ?? 9999));
   const shown = list.slice(0, state.homeShown);
@@ -878,7 +881,9 @@ function renderCoinGrid() {
     tile.addEventListener("click", () => selectCoin(coin.coin_id));
     grid.appendChild(tile);
   }
-  $("more-coins").classList.toggle("hidden", shown.length >= list.length);
+  more.classList.toggle("hidden", shown.length >= list.length);
+  grid.appendChild(more); // 리스트 스크롤 영역의 맨 끝
+  grid.scrollTop = keep;
 }
 
 // 메인 검색창 제안 목록: 이름·심볼·한글명 일치 최대 6개

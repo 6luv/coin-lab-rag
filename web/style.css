@@ -45,6 +45,7 @@
   --gap: 16px;
   --rail-w: 280px;
   --side-w: 300px;
+  --page-max: 1480px; /* 내용 최대 폭: 넓은 화면에서는 좌우 여백 */
   --top-h: 64px;
   --foot-h: 40px;
   --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -133,7 +134,8 @@ input:focus { outline: none; border-color: var(--acid-ink); }
     "rail  stage side";
   gap: 0 var(--gap);
   min-height: 100vh;
-  padding: 0 var(--gap) calc(var(--foot-h) + var(--gap));
+  --pad-x: max(var(--gap), calc((100vw - var(--page-max)) / 2));
+  padding: 0 var(--pad-x) calc(var(--foot-h) + var(--gap));
 }
 .topbar { grid-area: top; }
 #setup-warning { grid-area: warn; margin: 0 0 var(--gap); }
@@ -165,8 +167,8 @@ input:focus { outline: none; border-color: var(--acid-ink); }
   background: var(--bar-bg);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
-  margin: 0 calc(-1 * var(--gap)) var(--gap);
-  padding: 0 var(--gap);
+  margin: 0 calc(-1 * var(--pad-x)) var(--gap); /* 배경은 화면 끝까지, 내용은 본문 폭에 맞춤 */
+  padding: 0 var(--pad-x);
 }
 .brand { display: flex; align-items: center; gap: 8px; width: calc(var(--rail-w) - var(--gap)); flex-shrink: 0; text-decoration: none; }
 .brand:hover { text-decoration: none; }
@@ -517,7 +519,7 @@ button:disabled { opacity: 0.35; cursor: not-allowed; }
   align-items: center;
   gap: 12px;
   height: var(--foot-h);
-  padding: 0 var(--gap);
+  padding: 0 var(--pad-x);
   background: var(--bar-bg);
   backdrop-filter: blur(12px);
   border-top: 1px solid var(--line);
@@ -526,6 +528,32 @@ button:disabled { opacity: 0.35; cursor: not-allowed; }
 .footnote { font-size: 0.75rem; color: var(--lo); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 /* 10. 반응형 */
+/* 메인 화면(761px 이상): 화면 높이에 고정하고 코인 리스트만 스크롤 (DESIGN.md 3장) */
+@media (min-width: 761px) {
+  .app.home-mode {
+    height: 100vh; height: 100dvh; min-height: 0;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto minmax(0, 1fr);
+    grid-template-areas: "top" "warn" "stage";
+  }
+  .app.home-mode .stage { grid-column: auto; min-height: 0; overflow: hidden; }
+  .app.home-mode .welcome { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; padding-bottom: 0; }
+  .app.home-mode .hero { flex-shrink: 0; }
+  .app.home-mode .home-list { flex: 1 1 auto; min-height: 0; width: 100%; display: flex; flex-direction: column; margin-top: 32px; }
+  .app.home-mode .coin-grid {
+    flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain;
+    padding-bottom: 12px; scrollbar-width: thin; scrollbar-color: var(--raised) transparent;
+  }
+  .app.home-mode .coin-head { position: sticky; top: 0; z-index: 1; background: var(--bg); padding-top: 4px; padding-bottom: 6px; }
+}
+/* 낮은 화면: 위쪽 여백을 줄여 리스트 공간 확보 */
+@media (min-width: 761px) and (max-height: 860px) {
+  .app.home-mode .welcome { padding-top: 12px; }
+  .app.home-mode .welcome h1 { font-size: 1.7rem; margin-bottom: 8px; }
+  .app.home-mode .home-search { margin-top: 18px; }
+  .app.home-mode .examples { margin-top: 14px; }
+  .app.home-mode .home-list { margin-top: 20px; }
+}
 /* 넓은 화면: 화면 높이에 고정하고 목록·무대·정보가 각자 스크롤 (DESIGN.md 3장) */
 @media (min-width: 1181px) {
   .app { height: 100vh; height: 100dvh; min-height: 0; grid-template-rows: auto auto minmax(0, 1fr); }
@@ -548,7 +576,7 @@ button:disabled { opacity: 0.35; cursor: not-allowed; }
 @media (max-width: 760px) {
   :root { --gap: 12px; }
   .app { grid-template-columns: minmax(0, 1fr); grid-template-areas: "top" "warn" "rail" "stage" "side"; }
-  .topbar { flex-wrap: wrap; height: auto; padding: 10px var(--gap); }
+  .topbar { flex-wrap: wrap; height: auto; padding: 10px var(--pad-x); }
   .brand { width: auto; }
   .status-chip { max-width: 55vw; }
   .rail { position: static; max-height: none; margin-bottom: var(--gap); }
