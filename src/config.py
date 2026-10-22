@@ -43,9 +43,18 @@ def path(key: str) -> Path:
     return ROOT / settings()["paths"][key]
 
 
+def contact() -> str | None:
+    """위키미디어 User-Agent 정책용 연락처(이메일 또는 URL). 형식이 아니면 없음으로 본다. (NF2006)"""
+    value = os.getenv("CONTACT_EMAIL", "").strip()
+    return value if ("@" in value or value.startswith(("http://", "https://"))) else None
+
+
 def user_agent() -> str:
-    contact = os.getenv("CONTACT_EMAIL", "").strip() or "set CONTACT_EMAIL in .env"
-    return settings()["http"]["user_agent"].format(contact=contact)
+    template = settings()["http"]["user_agent"]  # "이름/버전 (설명; contact: {contact})"
+    value = contact()
+    if value:
+        return template.format(contact=value)
+    return template.split(";")[0] + ")"  # 연락처가 없으면 가짜 문구를 넣지 않는다 (위키 호출은 wiki.make_client 가 막음)
 
 
 def coingecko_key() -> str | None:

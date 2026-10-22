@@ -68,3 +68,25 @@ def test_gms_base_url_adds_openai_target(monkeypatch):
     assert openai_base_url() == "https://gms.ssafy.io/gmsapi/api.openai.com/v1"
     monkeypatch.delenv("OPENAI_BASE_URL")
     assert openai_base_url().endswith("/gmsapi/api.openai.com/v1")
+
+
+def test_long_retry_after_is_skipped_not_waited(monkeypatch):
+    import time as _time
+
+    from src.data_prep import http
+
+    class R:
+        status_code = 429
+        headers = {"Retry-After": "900"}
+
+    client = http.PoliteClient(0, max_wait_sec=30, max_retries=2)
+    monkeypatch.setattr(client.session, "get", lambda *a, **k: R())
+    slept = []
+    monkeypatch.setattr(http.time, "sleep", lambda s: slept.append(s))
+    t0 = _time.monotonic()
+    try:
+        client.get("https://example.com/whitepaper.pdf")
+        raise AssertionError("429 를 실패로 돌려줘야 한다")
+    except RuntimeError as e:
+        assert "900" in str(e)
+    assert not any(s >= 30 for s in slept) and _time.monotonic() - t0 < 5

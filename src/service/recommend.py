@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 from src.config import settings
-from src.data_prep import catalog, prompts
+from src.data_prep import catalog, items, prompts
 from src.rag import llm
 from src.vectorstore import store
 
@@ -15,11 +15,7 @@ def recommend(query: str) -> list[dict]:
     candidates = [c for c in (catalog.get(d.metadata.get("coin_id")) for d in found) if c]
     if not candidates:
         return []
-    listing = "\n".join(
-        f"{i}. {c['label']} — 카테고리: {', '.join(c.get('categories') or []) or '-'}"
-        f" — {(c.get('description_ko') or c.get('description_en') or '')[:200]}"
-        for i, c in enumerate(candidates, 1)
-    )
+    listing = "\n".join(f"{i}. {items.candidate_line(c)}" for i, c in enumerate(candidates, 1))
     raw = llm.ask(
         prompts.RECOMMEND_SYSTEM.format(max_results=MAX_RESULTS),
         prompts.RECOMMEND_USER.format(query=query, candidates=listing),

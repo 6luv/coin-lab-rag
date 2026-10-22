@@ -131,6 +131,21 @@ def index_text(item: dict) -> str:
     return "\n".join(p for p in parts if p)
 
 
+def candidate_line(item: dict, desc_chars: int = 200) -> str:
+    """조건 탐색(F2011) 선별 프롬프트용 한 줄. 조건 판정에 쓰이는 속성을 빠짐없이 넣는다."""
+    parts = [
+        item.get("label") or label(item),
+        f"시가총액 순위 {item['market_cap_rank']}위" if item.get("market_cap_rank") else "",
+        f"카테고리: {', '.join(item['categories'])}" if item.get("categories") else "카테고리: -",
+        f"해시 알고리즘: {item['hashing_algorithm']}" if item.get("hashing_algorithm") else "",
+        f"출시일: {item['genesis_date']}" if item.get("genesis_date") else "",
+        f"발행 플랫폼: {item['asset_platform_id']}" if item.get("asset_platform_id") else "",
+        f"설명: {(item.get('description_ko') or item.get('description_en') or '')[:desc_chars]}"
+        if (item.get("description_ko") or item.get("description_en")) else "",
+    ]
+    return " — ".join(p for p in parts if p)
+
+
 def metadata(item: dict) -> dict:
     """Chroma 메타데이터는 str/int/float/bool 만 허용하므로 평탄화한다."""
     m = item.get("market") or {}

@@ -85,7 +85,12 @@ def main() -> int:
     print(f"상세: 새로 받음 {fetched} · 실패 {failed}")
 
     if not args.skip_wiki:
-        wc = wiki.make_client()
+        try:
+            wc = wiki.make_client()
+        except wiki.MissingContactError as e:
+            print(f"{e}\n위키 매핑을 건너뜁니다. (.env 에 CONTACT_EMAIL 을 넣고 다시 실행, 또는 --skip-wiki)")
+            args.skip_wiki = True
+    if not args.skip_wiki:
         mapped = 0
         for m in raw["markets"]:
             if m["id"] in source_map:  # 사람 검토 결과 보존

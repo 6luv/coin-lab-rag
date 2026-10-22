@@ -8,7 +8,7 @@ from __future__ import annotations
 import re
 from urllib.parse import quote
 
-from src.config import settings
+from src.config import contact, settings
 from src.data_prep.http import PoliteClient
 
 WIKIDATA = "https://www.wikidata.org/w/api.php"
@@ -17,7 +17,19 @@ SOURCE_NAME = {"ko": "한국어 위키백과", "en": "English Wikipedia"}
 CRYPTO_HINT = re.compile(r"crypto|token|blockchain|coin|stablecoin|digital currency|decentrali", re.I)
 
 
+CONTACT_MISSING = (
+    "CONTACT_EMAIL(이메일 또는 프로젝트 URL)이 .env 에 없어 위키 문서를 수집하지 않습니다. "
+    "위키미디어 User-Agent 정책상 연락처가 필요합니다 (NF2006)."
+)
+
+
+class MissingContactError(Exception):
+    """연락처 없이 위키미디어 API 를 부르려 할 때. 네트워크 오류(RuntimeError)와 구분한다."""
+
+
 def make_client() -> PoliteClient:
+    if not contact():
+        raise MissingContactError(CONTACT_MISSING)
     return PoliteClient(settings()["http"]["wiki_interval_sec"])
 
 
@@ -139,3 +151,38 @@ def fetch_page(client: PoliteClient, title: str, lang: str = "ko") -> dict | Non
         "source_type": f"wikipedia_{lang}",
         "license": "CC BY-SA 4.0",
     }
+
+
+# --- 위키데이터 연결이 없는 코인의 자체 문서 찾기 (F2004 우선 규칙) ---
+_ITEM_HINT = re.compile(r"암호화폐|가상자산|가상화폐|코인|토큰|블록체인|스테이블코인|crypto|token|blockchain|coin|stablecoin|decentrali", re.I)
+
+
+def _norm(text: str) -> str:
+    return re.sub(r"[\s\-_.·()]+", "", text or "").lower()
+
+
+def is_item_page(coin: dict, row: dict) -> bool:
+    """검색 결과 한 건이 그 코인 자체를 다룬 문서인지.
+
+    제목(괄호 앞)이 코인 이름·한글명·심볼과 같고, 괄호 설명이나 요약에 암호화폐 단서가 있어야 한다.
+    이름만 같은 동음이의 문서(예: Rain → 가수)와 발행사·거래소 문서(이름이 다름)는 걸러진다. (D6 · D12)
+    """
+    title = row.get("title", "")
+    base = re.sub(r"\s*\(.*\)\s*$", "", title)
+    names = {_norm(x) for x in (coin.get("name"), coin.get("name_ko"), coin.get("symbol")) if x}
+    if _norm(base) not in names:
+        return False
+    paren = re.search(r"\(([^)]*)\)\s*$", title)
+    return bool(_ITEM_HINT.search(row.get("snippet", "")) or (paren and _ITEM_HINT.search(paren.group(1))))
+
+
+def find_item_page(client: PoliteClient, coin: dict) -> dict | None:
+    """한국어 → 영어 위키백과에서 코인 자체 문서를 찾아 본문을 받는다. 없으면 None."""
+    queries = (("ko", f"{coin.get('name_ko') or coin['name']} 암호화폐"), ("en", f"{coin['name']} cryptocurrency"))
+    for lang, query in queries:
+        for row in search(client, query, lang, 5):
+            if is_item_page(coin, row):
+                page = fetch_page(client, row["title"], lang)
+                if page:
+                    return page
+    return None

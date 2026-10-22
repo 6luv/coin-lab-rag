@@ -15,8 +15,8 @@ import threading
 
 import requests
 
-from src.config import settings
-from src.data_prep import catalog, docs_store, prompts, wiki
+from src.config import contact, settings
+from src.data_prep import catalog, docs_store, prompts, whitepaper, wiki
 from src.rag import llm
 from src.vectorstore import store
 from src.vectorstore.store import MissingKeyError
@@ -133,6 +133,69 @@ def _ensure_item_doc(col, coin: dict, manifest: dict, report: dict, saved: list[
                 report["errors"] += 1
             break
         docs_store.mark_keyword(manifest, coin_id, keyword)
+    if not added and not (coin.get("kowiki_title") or coin.get("enwiki_title")):
+        added += _search_item_doc(col, coin, manifest, report)
+    return added
+
+
+def _search_item_doc(col, coin: dict, manifest: dict, report: dict) -> list[str]:
+    """위키데이터 연결이 없는 코인: 검색으로 자체 문서를 찾아 선별·길이 규칙 없이 색인한다 (F2004, D12).
+    위키에 없으면 백서를 자체 문서로 쓴다 (D14).
+
+    한 번 찾아봤으면(찾았든 없든) 'item:search' 로 기록해 다시 검색하지 않는다. 네트워크·색인 실패는 기록하지 않는다.
+    """
+    coin_id = coin["coin_id"]
+    if docs_store.already_collected(manifest, coin_id, "item:search"):
+        return _whitepaper_item_doc(col, coin, manifest, report)
+    try:
+        page = wiki.find_item_page(_client(), coin)
+    except NETWORK_ERRORS:
+        report["errors"] += 1
+        return []
+    if not page:  # 위키에 없으면 백서로
+        docs_store.mark_keyword(manifest, coin_id, "item:search")
+        return _whitepaper_item_doc(col, coin, manifest, report)
+    keyword = f"item:search:{page['source_type']}:{page['title']}"
+    try:
+        title = _save_and_index(col, page, coin, keyword, manifest, is_item_doc=True)["title"]
+    except MissingKeyError:
+        raise
+    except Exception as e:
+        log.warning("자체 문서 색인 실패 (%s): %s", coin_id, type(e).__name__)
+        report["errors"] += 1
+        return []
+    docs_store.mark_keyword(manifest, coin_id, "item:search")
+    return [title]
+
+
+_wp_client = None
+
+
+def _whitepaper_item_doc(col, coin: dict, manifest: dict, report: dict) -> list[str]:
+    """위키 자체 문서가 없는 코인: 백서(PDF·웹)를 자체 문서로 수집·색인한다 (F2004 · F2016). 한 URL 은 한 번만 시도."""
+    global _wp_client
+    url = coin.get("whitepaper")
+    key = f"wp:{url}"
+    if not url or docs_store.already_collected(manifest, coin["coin_id"], key):
+        return []
+    if _wp_client is None:
+        _wp_client = whitepaper.make_client()
+    try:
+        doc = whitepaper.fetch(_wp_client, coin, url)
+    except NETWORK_ERRORS:
+        report["errors"] += 1
+        return []
+    added = []
+    if doc:
+        try:
+            added.append(_save_and_index(col, doc, coin, key, manifest, is_item_doc=True)["title"])
+        except MissingKeyError:
+            raise
+        except Exception as e:
+            log.warning("백서 색인 실패 (%s): %s", coin["coin_id"], type(e).__name__)
+            report["errors"] += 1
+            return []
+    docs_store.mark_keyword(manifest, coin["coin_id"], key)
     return added
 
 
@@ -156,9 +219,12 @@ def collect(coin_id: str, question: str) -> dict:
         added: list[str] = []
         try:
             saved = _reindex_saved(col, coin_id, report)
-            added += _ensure_item_doc(col, coin, manifest, report, saved)
-            if question.strip():
-                added += _collect_for_question(col, coin, question, manifest, report, cfg)
+            if not contact():  # NF2006: 연락처 없이 위키 API 를 부르지 않는다. 저장된 문서로만 답한다
+                report["notice"] = wiki.CONTACT_MISSING
+            else:
+                added += _ensure_item_doc(col, coin, manifest, report, saved)
+                if question.strip():
+                    added += _collect_for_question(col, coin, question, manifest, report, cfg)
         finally:
             docs_store.save_manifest(manifest)  # 중간에 실패해도 이미 저장·색인한 문서 기록은 남긴다
         titles = manifest.get(coin_id, {}).get("titles", [])

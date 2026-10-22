@@ -16,7 +16,7 @@ from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from src.config import ROOT, chat_model, gms_key, settings
+from src.config import ROOT, chat_model, contact, gms_key, settings
 from src.data_prep import catalog, docs_store
 from src.rag import collect as collector
 from src.rag import graph
@@ -80,6 +80,7 @@ def _coin_or_404(coin_id: str) -> dict:
 def status():
     return {
         "api_key": bool(gms_key()),
+        "contact": bool(contact()),  # NF2006: 없으면 위키 문서 수집을 하지 않는다
         "chat_model": chat_model(),
         "coins": len(catalog.coins()),
         "indexes": {"coin_meta": store.raw_count("items"), "coin_docs": store.raw_count("docs")},

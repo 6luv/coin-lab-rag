@@ -35,6 +35,7 @@ def page(title, lang="ko", pid=1):
 def env(tmp_path, monkeypatch):
     monkeypatch.setenv("EMBEDDING_PROVIDER", "fake")
     monkeypatch.setenv("LLM_PROVIDER", "fake")
+    monkeypatch.setenv("CONTACT_EMAIL", "test@example.com")
     for key, rel in {"coins": "coins.json", "docs_dir": "docs", "manifest": "docs/manifest.json",
                      "chroma_dir": "chroma", "source_map": "source_map.json"}.items():
         monkeypatch.setitem(settings()["paths"], key, str(tmp_path / rel))
@@ -362,3 +363,119 @@ def test_migrate_legacy_filenames_and_manifest(env):
     assert not legacy.exists() and docs_store.doc_path("ethereum", "wikipedia_ko-1").exists()
     assert manifest["ethereum"] == {"keywords": ["item:ko:이더리움"], "titles": ["이더리움"],
                                     "page_ids": ["wikipedia_ko-1"]}
+
+
+
+# --- Codex 요구사항 점검(2026-10-22 15:33) 회귀 테스트 ---
+
+def test_no_contact_skips_wiki_calls(env, monkeypatch):
+    from src.config import user_agent
+
+    monkeypatch.delenv("CONTACT_EMAIL")
+    assert "contact" not in user_agent() and "set CONTACT_EMAIL" not in user_agent()
+    with pytest.raises(collect.wiki.MissingContactError):
+        collect.wiki.make_client()
+    monkeypatch.setattr(collect, "_wiki_client", None)
+    script('["지분증명"]', "[1]")
+    out = collect.collect("ethereum", "지분증명 전환")
+    assert out["added_titles"] == [] and "CONTACT_EMAIL" in out["notice"]
+    assert env["search"] == [] and env["fetch"] == []
+
+
+def test_user_agent_has_contact(monkeypatch):
+    from src.config import user_agent
+
+    monkeypatch.setenv("CONTACT_EMAIL", "me@example.com")
+    assert "contact: me@example.com" in user_agent()
+    monkeypatch.setenv("CONTACT_EMAIL", "not-a-contact")
+    assert "not-a-contact" not in user_agent()
+
+
+def test_is_item_page_rules():
+    rain = {"name": "Rain", "name_ko": "", "symbol": "RAIN"}
+    assert collect.wiki.is_item_page(rain, {"title": "Rain (cryptocurrency)", "snippet": ""})
+    assert collect.wiki.is_item_page(rain, {"title": "RAIN", "snippet": "Arbitrum options protocol token"})
+    assert not collect.wiki.is_item_page(rain, {"title": "레인 (가수)", "snippet": "대한민국의 가수"})
+    assert not collect.wiki.is_item_page(rain, {"title": "Rain", "snippet": "Rain is liquid water"})
+    assert not collect.wiki.is_item_page(rain, {"title": "Rain Bahrain exchange", "snippet": "crypto exchange"})
+
+
+def test_unlinked_coin_item_doc_found_by_search_bypasses_selection(env, monkeypatch):
+    def search(_c, q, lang="ko", limit=5):
+        env["search"].append(q)
+        return [{"page_id": 77, "title": "Rain (cryptocurrency)", "snippet": "options protocol", "size": 1, "lang": lang},
+                {"page_id": 11, "title": "레인 (가수)", "snippet": "대한민국의 가수", "size": 1, "lang": lang}]
+
+    def fetch(_c, title, lang="ko"):
+        env["fetch"].append(title)
+        return {**page(title, lang, 77), "text": "짧은 문서"}            # 최소 길이(300자) 미만
+
+    monkeypatch.setattr(collect.wiki, "search", search)
+    monkeypatch.setattr(collect.wiki, "fetch_page", fetch)
+    script('["옵션"]', "[]")                                          # 선별 프롬프트는 아무것도 고르지 않음
+    out = collect.collect("rain", "옵션 프로토콜 구조는?")
+    assert out["added_titles"] == ["Rain (cryptocurrency)"]
+    doc = next(d for d in docs_store.iter_docs() if d["coin_id"] == "rain")
+    assert doc["is_item_doc"] is True and doc["search_query"].startswith("item:search:")
+    assert "item:search" in docs_store.load_manifest()["rain"]["keywords"]
+
+    n = len(env["search"])
+    script('["옵션"]', "[]")
+    collect.collect("rain", "옵션 프로토콜 구조는?")                     # 다시 물어도 자체 문서 검색은 반복하지 않음
+    assert sum("암호화폐" in q or "cryptocurrency" in q for q in env["search"][n:]) == 0
+
+
+def test_recommend_candidates_include_condition_attributes(env, monkeypatch):
+    from src.data_prep import items
+    from src.service import recommend
+
+    btc = {"coin_id": "bitcoin", "name": "Bitcoin", "symbol": "BTC", "name_ko": "비트코인", "market_cap_rank": 1,
+           "categories": ["Layer 1 (L1)"], "hashing_algorithm": "SHA-256", "genesis_date": "2009-01-03",
+           "asset_platform_id": None, "description_ko": "", "description_en": "Peer-to-peer cash"}
+    line = items.candidate_line(btc)
+    for part in ("1위", "Layer 1 (L1)", "SHA-256", "2009-01-03", "Peer-to-peer"):
+        assert part in line
+
+    class Doc:
+        metadata = {"coin_id": "ethereum"}
+
+    class Col:
+        def similarity_search(self, q, k):
+            return [Doc()]
+
+    seen = {}
+    monkeypatch.setattr(recommend.store, "collection", lambda key: Col())
+    monkeypatch.setattr(recommend.llm, "ask", lambda system, user: seen.setdefault("user", user) and '[{"n": 1, "reason": "L1"}]')
+    out = recommend.recommend("시가총액 2위 레이어1")
+    assert "시가총액 순위 2위" in seen["user"] and "Layer 1 (L1)" in seen["user"]
+    assert out[0]["coin_id"] == "ethereum"
+
+
+def test_unlinked_coin_falls_back_to_whitepaper_with_page_citation(env, monkeypatch):
+    from src.data_prep import whitepaper
+
+    catalog.get("rain")["whitepaper"] = "https://rain.one/whitepaper.pdf"
+    calls = []
+
+    def fetch(client, coin, url):
+        calls.append(url)
+        return {"page_id": "wp1", "title": "Rain 백서", "url": url, "text": "x", "source": "백서 PDF",
+                "source_type": "whitepaper_pdf", "license": "저작권: 각 프로젝트", "file_name": "whitepaper.pdf",
+                "pages": [{"page": 1, "text": "Rain 은 Arbitrum 위의 옵션 프로토콜이다. " * 5},
+                          {"page": 7, "text": "RAIN 토큰은 수수료로 소각된다. " * 5}]}
+
+    monkeypatch.setattr(whitepaper, "fetch", fetch)
+    monkeypatch.setattr(collect, "_wp_client", object())
+    script('["옵션"]', "[]")
+    out = collect.collect("rain", "토큰 소각 구조는?")                     # 위키 검색은 일치 없음 → 백서
+    assert out["added_titles"] == ["Rain 백서"] and calls == ["https://rain.one/whitepaper.pdf"]
+    assert "wp:https://rain.one/whitepaper.pdf" in docs_store.load_manifest()["rain"]["keywords"]
+
+    script('["옵션"]', "[]")
+    collect.collect("rain", "토큰 소각 구조는?")
+    assert calls == ["https://rain.one/whitepaper.pdf"]                    # 같은 백서는 다시 받지 않음
+
+    script("RAIN 은 수수료로 소각됩니다 [근거 2].")
+    ans = graph.run("rain", "토큰 소각 구조는?")
+    src = ans["sources"][0]
+    assert src["source_type"] == "whitepaper_pdf" and src["source_label"] == "백서 PDF" and src["page"] in (1, 7)
