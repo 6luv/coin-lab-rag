@@ -1,0 +1,16 @@
+{
+ "page_id": 54859253,
+ "doc_id": "wikipedia_en-54859253",
+ "title": "Filecoin",
+ "url": "https://en.wikipedia.org/wiki/Filecoin",
+ "text": "Filecoin (⨎) is a cryptocurrency intended to be a blockchain-based cooperative digital storage and data retrieval method. It was developed by Protocol Labs and shares some ideas from InterPlanetary File System allowing users to rent unused hard drive space. Filecoin is an open protocol and uses a blockchain to record participation in the network. Transactions are made using the blockchain's currency, FIL. The blockchain is based on both proof of-replication and proof of space-time.\nFilecoins are paid to miners (termed \"storage providers\" - SPs) who provide storage for clients, as opposed to Bitcoin where miners secure the network and maintain consensus. The payment amount depends on the network schedule, storage sectors quantity and size, adherence to FIL+ and deals made with clients, and participation in the network requires putting tokens in collateral.\n\n\n== History ==\nFilecoin, as a cryptocurrency and file storage network, was defined in a white paper published in July 2014.\nThe project was launched in August 2017, and raised over $200 million within 30 minutes via an initial coin offering.\nIn 2020, the project set up the Filecoin Foundation under the leadership of founding officer Megan Klimen to support the development of the protocol, and the Filecoin Foundation for the Decentralized Web to support other projects contributing to the ecosystem of the decentralized web.\nIn April 2021, the storage capacity of the network crossed the Baseline Target, which was interpreted as a transition from a \"capacity building\" stage of the network to one on which scale was achieved. However, the network growth in 2022 was slower than the Baseline Target, which caused the capacity to become smaller than the target by February 2023.\nTheir Board of Directors and advisors include Brewster Kahle (Founder of Internet Archive), Joe Lubin (Founder of Consensys & Cofounder of Ethereum), and Denelle Dixon (CEO of Stellar Development Foundation).\n\n\n== Philanthropy ==\nIn April 2021, the Filecoin Foundation donated 50,000 filecoins worth $10,000,000 to the Internet Archive. In addition, Internet Archive's founder Brewster Kahle and director of partnerships Wendy Hanamura joined the boards of advisors of Filecoin and the Filecoin Foundation for the Decentralized Web.\nIn 2020, content from Internet Archive started to be stored in Filecoin, with the purpose of creating a decentralized prototype of the digital library. By October 2023, one petabyte of data had been uploaded to the Filecoin network.\n\n\n== See also ==\nDistributed data store\n\n\n== Notes ==\n\n\n== References ==\n\n\n== External links ==\nOfficial website",
+ "source": "English Wikipedia",
+ "source_type": "wikipedia_en",
+ "license": "CC BY-SA 4.0",
+ "coin_id": "filecoin",
+ "related_coin": "Filecoin",
+ "search_query": "item:en:Filecoin",
+ "is_item_doc": true,
+ "lastrevid": 1371816113,
+ "collected_at": "2026-10-22"
+}

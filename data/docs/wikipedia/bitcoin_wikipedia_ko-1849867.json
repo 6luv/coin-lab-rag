@@ -1,0 +1,16 @@
+{
+ "page_id": 1849867,
+ "doc_id": "wikipedia_ko-1849867",
+ "title": "비트코인 코어",
+ "url": "https://ko.wikipedia.org/wiki/%EB%B9%84%ED%8A%B8%EC%BD%94%EC%9D%B8_%EC%BD%94%EC%96%B4",
+ "text": "비트코인 코어(Bitcoin Core)는 비트코인의 레퍼런스 클라이언트이다. 처음에 이 소프트웨어는 사토시 나카모토에 의해 배급되었으며 \"비트코인\"이라는 이름으로, 나중에는 \"비트코인-Qt\"(Bitcoin-Qt)라는 이름으로, 이후에 \"비트코인 코어\"(Bitcoin Core)로 이름이 변경되었다. 이러한 이유로 사토시 클라이언트(Satoshi client)로 알려져 있다. 비트코인 네트워크를 만드는 비트코인 노드에 의해 사용되는 풀 클라이언트이다. 비트코인 코어의 변경사항을 통해 개발자들은 기반이 되는 비트코인 프로토콜을 변경한다. 2016년 기준으로 비트코인 코어 저장소들은 Wladimir J. van der Laan에 의해 유지보수되고 있다.\nMIT 디지털 통화 이니셔티브(MIT Digital Currency Initiative)는 비트코인 코어의 개발 중 일부를 투자한다. 이 프로젝트는 또한 암호 방식 라이브러리 libsecp256k1을 유지보수한다.\n\n\n== 같이 보기 ==\n\n자유-오픈 소스 소프트웨어 패키지 목록\n\n\n== 각주 ==\n\n\n== 외부 링크 ==\n비트코인 코어  - 공식 웹사이트\nBitcoin Core at Bitcoin Wiki\nCoin.dance Node statistics",
+ "source": "한국어 위키백과",
+ "source_type": "wikipedia_ko",
+ "license": "CC BY-SA 4.0",
+ "coin_id": "bitcoin",
+ "related_coin": "Bitcoin",
+ "search_query": "q:사토시 나카모토",
+ "is_item_doc": false,
+ "lastrevid": 42291820,
+ "collected_at": "2026-10-22"
+}

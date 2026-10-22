@@ -1,0 +1,16 @@
+{
+ "page_id": 68017635,
+ "doc_id": "wikipedia_en-68017635",
+ "title": "Stacks blockchain",
+ "url": "https://en.wikipedia.org/wiki/Stacks_blockchain",
+ "text": "Stacks, formerly Blockstack, is a Bitcoin layer-2 blockchain.\n\n\n== History ==\nThe Blockstack project was originally founded by Muneeb Ali and Ryan Shea in 2013. By 2017, Blockstack locked in two additional funding rounds totalling $4 million. In 2017, Blockstack went on to launch an initial coin offering (ICO). BlockStack PBC (now called Hiro PBC) was the first to launch a SEC qualified token offering in July 2019. The start-up spent almost a year to ensure they met the SEC qualifications.\nIn October 2020 the community rebranded Blockstack to Stacks.\nWith the introduction of the Stacks Blockchain 2.0 on 14 January 2021, Hiro PBC revoked their sole control of the network.\n\nDue to this, the Stacks token could no longer be viewed as a security under SEC  Regulation A+ qualifications and filed an exit report.\n\n\n== Design ==\nAt its inception, Blockstack aimed to offer solutions to the problems of internet privacy, security and data breaches (especially in cloud storage). Blockstack purports to offer users greater choice in what data they share with other users and applications.\n\n\n== CityCoins ==\nIn 2021, the CityCoins project launched fungible tokens for the cities of Miami and New York City. In September 2021, Miami's city commissioners voted to accept the protocol treasury, valued at $21 million at the time. MiamiCoin's value crashed, and so Stacks donated $5.25M to the City of Miami.\nAs of March 2023, Bloomberg was reporting that CityCoin was facing a \"quiet demise\" as liquidity issues and a lack of interest caused both the New York City and Miami coins to be delisted from the OkCoin cryptocurrency exchange.\n\n\n== References ==",
+ "source": "English Wikipedia",
+ "source_type": "wikipedia_en",
+ "license": "CC BY-SA 4.0",
+ "coin_id": "blockstack",
+ "related_coin": "Stacks",
+ "search_query": "item:en:Stacks blockchain",
+ "is_item_doc": true,
+ "lastrevid": 1335662544,
+ "collected_at": "2026-10-22"
+}

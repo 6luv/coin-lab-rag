@@ -1,0 +1,2204 @@
+{
+ "_meta": {
+  "checked_at": "2026-10-22T00:32:46.477Z",
+  "method": "Wikidata P5777(CoinMarketCap ID)=CoinGecko id → name slug → label search(+crypto 설명 필터); 미매핑은 ko/en 위키 검색 상위 3건에서 제목 일치 후보 기록",
+  "user_agent_note": "Wikimedia Api-User-Agent 헤더로 프로젝트명·연락처 전송",
+  "lastrevid": "문서 확인 시점의 리비전 ID",
+  "review_rule": "토큰의 프로토콜·플랫폼 자체를 다루면 accept, 별개의 발행사·거래소·회사 문서면 related"
+ },
+ "bitcoin": {
+  "wikidata": {
+   "qid": "Q131723",
+   "method": "P5777=coingecko_id",
+   "label_ko": "비트코인"
+  },
+  "kowiki": {
+   "title": "비트코인",
+   "page_id": 621958,
+   "chars": 14591,
+   "lastrevid": 42591430,
+   "url": "https://ko.wikipedia.org/wiki/%EB%B9%84%ED%8A%B8%EC%BD%94%EC%9D%B8"
+  },
+  "enwiki": {
+   "title": "Bitcoin",
+   "page_id": 28249265,
+   "chars": 28536,
+   "lastrevid": 1379427049,
+   "url": "https://en.wikipedia.org/wiki/Bitcoin"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "ethereum": {
+  "wikidata": {
+   "qid": "Q16783523",
+   "method": "P5777=coingecko_id",
+   "label_ko": "이더리움"
+  },
+  "kowiki": {
+   "title": "이더리움",
+   "page_id": 1247894,
+   "chars": 2839,
+   "lastrevid": 42657132,
+   "url": "https://ko.wikipedia.org/wiki/%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80"
+  },
+  "enwiki": {
+   "title": "Ethereum",
+   "page_id": 41754003,
+   "chars": 27021,
+   "lastrevid": 1380385787,
+   "url": "https://en.wikipedia.org/wiki/Ethereum"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "tether": {
+  "wikidata": {
+   "qid": "Q47528658",
+   "method": "P5777=coingecko_id",
+   "label_ko": "테더"
+  },
+  "kowiki": {
+   "title": "테더 (암호화폐)",
+   "page_id": 4101634,
+   "chars": 12674,
+   "lastrevid": 42437211,
+   "url": "https://ko.wikipedia.org/wiki/%ED%85%8C%EB%8D%94_%28%EC%95%94%ED%98%B8%ED%99%94%ED%8F%90%29"
+  },
+  "enwiki": {
+   "title": "Tether (cryptocurrency)",
+   "page_id": 55977923,
+   "chars": 30379,
+   "lastrevid": 1378840830,
+   "url": "https://en.wikipedia.org/wiki/Tether_%28cryptocurrency%29"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "binancecoin": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": {
+   "title": "BNB Smart Chain (blockchain platform)",
+   "page_id": 81289832,
+   "string_match": "prefix_related",
+   "url": "https://en.wikipedia.org/wiki/BNB_Smart_Chain_%28blockchain_platform%29"
+  },
+  "candidate_review": {
+   "decision": "accept",
+   "note": "BNB 의 발행 체인(BNB Smart Chain) 문서 — 코인 자체 문서로 사용 가능"
+  }
+ },
+ "ripple": {
+  "wikidata": {
+   "qid": "Q115623704",
+   "method": "P5777=coingecko_id",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": {
+   "title": "XRP 레저",
+   "page_id": 1846022,
+   "string_match": "prefix_related",
+   "url": "https://ko.wikipedia.org/wiki/XRP_%EB%A0%88%EC%A0%80"
+  },
+  "search_candidate_en": {
+   "title": "XRP Ledger",
+   "page_id": 37194754,
+   "string_match": "prefix_related",
+   "url": "https://en.wikipedia.org/wiki/XRP_Ledger"
+  },
+  "candidate_review": {
+   "decision": "accept",
+   "note": "XRP 가 동작하는 XRP Ledger 문서"
+  }
+ },
+ "usd-coin": {
+  "wikidata": {
+   "qid": "Q100781882",
+   "method": "P5777=coingecko_id",
+   "label_ko": "USDC"
+  },
+  "kowiki": {
+   "title": "USDC (암호화폐)",
+   "page_id": 4101631,
+   "chars": 1437,
+   "lastrevid": 41095667,
+   "url": "https://ko.wikipedia.org/wiki/USDC_%28%EC%95%94%ED%98%B8%ED%99%94%ED%8F%90%29"
+  },
+  "enwiki": {
+   "title": "USDC (cryptocurrency)",
+   "page_id": 63586775,
+   "chars": 3100,
+   "lastrevid": 1370061318,
+   "url": "https://en.wikipedia.org/wiki/USDC_%28cryptocurrency%29"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "solana": {
+  "wikidata": {
+   "qid": "Q108695872",
+   "method": "P5777=coingecko_id",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": {
+   "title": "Solana (blockchain platform)",
+   "page_id": 68695418,
+   "chars": 7026,
+   "lastrevid": 1370327076,
+   "url": "https://en.wikipedia.org/wiki/Solana_%28blockchain_platform%29"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "tron": {
+  "wikidata": {
+   "qid": "Q47134419",
+   "method": "P5777=coingecko_id",
+   "label_ko": "트론"
+  },
+  "kowiki": {
+   "title": "트론 (블록체인)",
+   "page_id": 4101629,
+   "chars": 3216,
+   "lastrevid": 42440776,
+   "url": "https://ko.wikipedia.org/wiki/%ED%8A%B8%EB%A1%A0_%28%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8%29"
+  },
+  "enwiki": {
+   "title": "Tron (blockchain)",
+   "page_id": 61565140,
+   "chars": 6458,
+   "lastrevid": 1372545107,
+   "url": "https://en.wikipedia.org/wiki/Tron_%28blockchain%29"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "figure-heloc": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "zcash": {
+  "wikidata": {
+   "qid": "Q27148141",
+   "method": "P5777=coingecko_id",
+   "label_ko": "Zcash"
+  },
+  "kowiki": {
+   "title": "Zcash",
+   "page_id": 1873568,
+   "chars": 2530,
+   "lastrevid": 42516438,
+   "url": "https://ko.wikipedia.org/wiki/Zcash"
+  },
+  "enwiki": {
+   "title": "Zcash",
+   "page_id": 51849458,
+   "chars": 6689,
+   "lastrevid": 1381362683,
+   "url": "https://en.wikipedia.org/wiki/Zcash"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "hyperliquid": {
+  "wikidata": {
+   "qid": "Q138732174",
+   "method": "label_search+desc_filter",
+   "label_ko": "하이퍼리퀴드"
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "dogecoin": {
+  "wikidata": {
+   "qid": "Q15377916",
+   "method": "P5777=coingecko_id",
+   "label_ko": "도지코인"
+  },
+  "kowiki": {
+   "title": "도지코인",
+   "page_id": 1048688,
+   "chars": 4903,
+   "lastrevid": 40544528,
+   "url": "https://ko.wikipedia.org/wiki/%EB%8F%84%EC%A7%80%EC%BD%94%EC%9D%B8"
+  },
+  "enwiki": {
+   "title": "Dogecoin",
+   "page_id": 41360413,
+   "chars": 16686,
+   "lastrevid": 1374662445,
+   "url": "https://en.wikipedia.org/wiki/Dogecoin"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "monero": {
+  "wikidata": {
+   "qid": "Q19893485",
+   "method": "P5777=coingecko_id",
+   "label_ko": "모네로"
+  },
+  "kowiki": {
+   "title": "모네로",
+   "page_id": 1890284,
+   "chars": 1377,
+   "lastrevid": 40210272,
+   "url": "https://ko.wikipedia.org/wiki/%EB%AA%A8%EB%84%A4%EB%A1%9C"
+  },
+  "enwiki": {
+   "title": "Monero",
+   "page_id": 45714713,
+   "chars": 11996,
+   "lastrevid": 1380653466,
+   "url": "https://en.wikipedia.org/wiki/Monero"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "usds": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "whitebit": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "chainlink": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": {
+   "title": "Chainlink (blockchain oracle)",
+   "page_id": 67444790,
+   "string_match": "exact",
+   "url": "https://en.wikipedia.org/wiki/Chainlink_%28blockchain_oracle%29"
+  },
+  "candidate_review": {
+   "decision": "accept",
+   "note": "동일 프로젝트"
+  }
+ },
+ "cardano": {
+  "wikidata": {
+   "qid": "Q47273538",
+   "method": "P5777=coingecko_id",
+   "label_ko": "카르다노"
+  },
+  "kowiki": {
+   "title": "카르다노 (블록체인 플랫폼)",
+   "page_id": 4101621,
+   "chars": 4783,
+   "lastrevid": 42424356,
+   "url": "https://ko.wikipedia.org/wiki/%EC%B9%B4%EB%A5%B4%EB%8B%A4%EB%85%B8_%28%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8_%ED%94%8C%EB%9E%AB%ED%8F%BC%29"
+  },
+  "enwiki": {
+   "title": "Cardano (blockchain platform)",
+   "page_id": 52920286,
+   "chars": 9374,
+   "lastrevid": 1345627574,
+   "url": "https://en.wikipedia.org/wiki/Cardano_%28blockchain_platform%29"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "leo-token": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "near": {
+  "wikidata": {
+   "qid": "Q124436383",
+   "method": "P5777=name_slug",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": {
+   "title": "NEAR (blockchain platform)",
+   "page_id": 81331455,
+   "chars": 3837,
+   "lastrevid": 1374559820,
+   "url": "https://en.wikipedia.org/wiki/NEAR_%28blockchain_platform%29"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "stellar": {
+  "wikidata": {
+   "qid": "Q102257282",
+   "method": "P5777=coingecko_id",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": {
+   "title": "Stellar (payment network)",
+   "page_id": 43737395,
+   "string_match": "exact",
+   "url": "https://en.wikipedia.org/wiki/Stellar_%28payment_network%29"
+  },
+  "candidate_review": {
+   "decision": "accept",
+   "note": "동일 프로젝트"
+  }
+ },
+ "rain": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": {
+   "title": "Rain (cryptocurrency exchange)",
+   "page_id": 78010938,
+   "string_match": "exact",
+   "url": "https://en.wikipedia.org/wiki/Rain_%28cryptocurrency_exchange%29"
+  },
+  "candidate_review": {
+   "decision": "reject",
+   "note": "제목은 일치하지만 바레인 거래소 Rain — Arbitrum 옵션 프로토콜 RAIN 과 다른 대상"
+  }
+ },
+ "bitcoin-cash": {
+  "wikidata": {
+   "qid": "Q34328146",
+   "method": "P5777=coingecko_id",
+   "label_ko": "비트코인 캐시"
+  },
+  "kowiki": {
+   "title": "비트코인 캐시",
+   "page_id": 1865279,
+   "chars": 3598,
+   "lastrevid": 42291814,
+   "url": "https://ko.wikipedia.org/wiki/%EB%B9%84%ED%8A%B8%EC%BD%94%EC%9D%B8_%EC%BA%90%EC%8B%9C"
+  },
+  "enwiki": {
+   "title": "Bitcoin Cash",
+   "page_id": 54679407,
+   "chars": 9584,
+   "lastrevid": 1354177266,
+   "url": "https://en.wikipedia.org/wiki/Bitcoin_Cash"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "litecoin": {
+  "wikidata": {
+   "qid": "Q4043030",
+   "method": "P5777=coingecko_id",
+   "label_ko": "라이트코인"
+  },
+  "kowiki": {
+   "title": "라이트코인",
+   "page_id": 1022747,
+   "chars": 1399,
+   "lastrevid": 41696221,
+   "url": "https://ko.wikipedia.org/wiki/%EB%9D%BC%EC%9D%B4%ED%8A%B8%EC%BD%94%EC%9D%B8"
+  },
+  "enwiki": {
+   "title": "Litecoin",
+   "page_id": 37395085,
+   "chars": 3727,
+   "lastrevid": 1372802909,
+   "url": "https://en.wikipedia.org/wiki/Litecoin"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "uniswap": {
+  "wikidata": {
+   "qid": "Q104438477",
+   "method": "label_search+desc_filter",
+   "label_ko": "유니스왑"
+  },
+  "kowiki": {
+   "title": "유니스왑",
+   "page_id": 4101652,
+   "chars": 2919,
+   "lastrevid": 40806059,
+   "url": "https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%8A%A4%EC%99%91"
+  },
+  "enwiki": {
+   "title": "Uniswap",
+   "page_id": 65962534,
+   "chars": 5420,
+   "lastrevid": 1379919424,
+   "url": "https://en.wikipedia.org/wiki/Uniswap"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null,
+  "link_review": {
+   "decision": "accept",
+   "needs_review": false,
+   "note": "프로젝트 자체 문서"
+  }
+ },
+ "ethena-usde": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "dai": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": {
+   "title": "Dai (cryptocurrency)",
+   "page_id": 65842451,
+   "string_match": "exact",
+   "url": "https://en.wikipedia.org/wiki/Dai_%28cryptocurrency%29"
+  },
+  "candidate_review": {
+   "decision": "accept",
+   "note": "동일 토큰"
+  }
+ },
+ "canton-network": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": {
+   "title": "Canton of Zug",
+   "page_id": 233549,
+   "string_match": "prefix_related",
+   "url": "https://en.wikipedia.org/wiki/Canton_of_Zug"
+  },
+  "candidate_review": {
+   "decision": "reject",
+   "note": "스위스 추크 주(州) 문서 — 무관"
+  }
+ },
+ "avalanche-2": {
+  "wikidata": {
+   "qid": "Q110233099",
+   "method": "P5777=name_slug",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": {
+   "title": "Avalanche (blockchain platform)",
+   "page_id": 64064664,
+   "chars": 12011,
+   "lastrevid": 1381043012,
+   "url": "https://en.wikipedia.org/wiki/Avalanche_%28blockchain_platform%29"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "sui": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": {
+   "title": "Sui (blockchain platform)",
+   "page_id": 83425352,
+   "string_match": "exact",
+   "url": "https://en.wikipedia.org/wiki/Sui_%28blockchain_platform%29"
+  },
+  "candidate_review": {
+   "decision": "accept",
+   "note": "동일 프로젝트"
+  }
+ },
+ "usd1-wlfi": {
+  "wikidata": {
+   "qid": "Q136543215",
+   "method": "P5777=name_slug",
+   "label_ko": null,
+   "desc_en": "cryptocurrency stablecoin"
+  },
+  "kowiki": null,
+  "enwiki": {
+   "title": "World Liberty Financial",
+   "page_id": 78065953,
+   "chars": 12516,
+   "lastrevid": 1377904153,
+   "url": "https://en.wikipedia.org/wiki/World_Liberty_Financial"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null,
+  "link_review": {
+   "decision": "related",
+   "needs_review": false,
+   "note": "발행사 World Liberty Financial 문서 — USD1 스테이블코인 자체 문서 아님"
+  }
+ },
+ "the-open-network": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "hedera-hashgraph": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": {
+   "title": "Hedera (distributed ledger)",
+   "page_id": 56941030,
+   "string_match": "exact",
+   "url": "https://en.wikipedia.org/wiki/Hedera_%28distributed_ledger%29"
+  },
+  "candidate_review": {
+   "decision": "accept",
+   "note": "동일 프로젝트"
+  }
+ },
+ "tether-gold": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": {
+   "title": "Tether (cryptocurrency)",
+   "page_id": 55977923,
+   "string_match": "prefix_related",
+   "url": "https://en.wikipedia.org/wiki/Tether_%28cryptocurrency%29"
+  },
+  "candidate_review": {
+   "decision": "related",
+   "note": "발행사 Tether 문서 — XAUT 자체 문서 아님"
+  }
+ },
+ "global-dollar": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "bittensor": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "shiba-inu": {
+  "wikidata": {
+   "qid": "Q106853490",
+   "method": "P5777=coingecko_id",
+   "label_ko": "시바이누코인",
+   "desc_en": "cryptocurrency"
+  },
+  "kowiki": {
+   "title": "시바이누코인",
+   "page_id": 3086709,
+   "chars": 662,
+   "lastrevid": 40445282,
+   "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C%EB%B0%94%EC%9D%B4%EB%88%84%EC%BD%94%EC%9D%B8"
+  },
+  "enwiki": {
+   "title": "Shiba Inu (cryptocurrency)",
+   "page_id": 67654959,
+   "chars": 1417,
+   "lastrevid": 1366163714,
+   "url": "https://en.wikipedia.org/wiki/Shiba_Inu_%28cryptocurrency%29"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "quant-network": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "crypto-com-chain": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "paypal-usd": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": {
+   "title": "PayPal",
+   "page_id": 195809,
+   "string_match": "prefix_related",
+   "url": "https://en.wikipedia.org/wiki/PayPal"
+  },
+  "candidate_review": {
+   "decision": "related",
+   "note": "발행사 PayPal 문서"
+  }
+ },
+ "ethena": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "bitway": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "okb": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "aave": {
+  "wikidata": {
+   "qid": "Q125457725",
+   "method": "P5777=coingecko_id",
+   "label_ko": null,
+   "desc_en": "decentralized finance protocol"
+  },
+  "kowiki": null,
+  "enwiki": {
+   "title": "Aave",
+   "page_id": 78346135,
+   "chars": 3101,
+   "lastrevid": 1347395956,
+   "url": "https://en.wikipedia.org/wiki/Aave"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "hashnote-usyc": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "pump-fun": {
+  "wikidata": {
+   "qid": "Q131313782",
+   "method": "label_search+desc_filter",
+   "label_ko": null,
+   "desc_en": "Solana token creation platform"
+  },
+  "kowiki": null,
+  "enwiki": {
+   "title": "Pump.fun",
+   "page_id": 78559650,
+   "chars": 6794,
+   "lastrevid": 1378787491,
+   "url": "https://en.wikipedia.org/wiki/Pump.fun"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null,
+  "link_review": {
+   "decision": "accept",
+   "needs_review": false,
+   "note": "PUMP 를 발행한 플랫폼 문서"
+  }
+ },
+ "ondo-us-dollar-yield": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "ripple-usd": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "ondo-finance": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "worldcoin-wld": {
+  "wikidata": {
+   "qid": "Q118868596",
+   "method": "label_search+desc_filter",
+   "label_ko": "월드",
+   "desc_en": "iris biometric cryptocurrency project"
+  },
+  "kowiki": {
+   "title": "월드 (블록체인)",
+   "page_id": 4101657,
+   "chars": 5744,
+   "lastrevid": 41994318,
+   "url": "https://ko.wikipedia.org/wiki/%EC%9B%94%EB%93%9C_%28%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8%29"
+  },
+  "enwiki": {
+   "title": "World (blockchain)",
+   "page_id": 73548731,
+   "chars": 11592,
+   "lastrevid": 1362705171,
+   "url": "https://en.wikipedia.org/wiki/World_%28blockchain%29"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null,
+  "link_review": {
+   "decision": "accept",
+   "needs_review": false,
+   "note": "프로젝트 자체 문서"
+  }
+ },
+ "blackrock-usd-institutional-digital-liquidity-fund": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "polkadot": {
+  "wikidata": {
+   "qid": "Q46166265",
+   "method": "label_search+desc_filter",
+   "label_ko": null,
+   "desc_en": "cryptocurrency and cross-blockchain interface that enables cross-blockchain transfers of any type of data or asset, not just tokens"
+  },
+  "kowiki": null,
+  "enwiki": {
+   "title": "Polkadot (blockchain platform)",
+   "page_id": 56086757,
+   "chars": 5796,
+   "lastrevid": 1378697257,
+   "url": "https://en.wikipedia.org/wiki/Polkadot_%28blockchain_platform%29"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null,
+  "link_review": {
+   "decision": "accept",
+   "needs_review": false,
+   "note": "프로젝트 자체 문서"
+  }
+ },
+ "aster-2": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "pepe": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": {
+   "title": "Pepe the Frog",
+   "page_id": 49002118,
+   "string_match": "prefix_related",
+   "url": "https://en.wikipedia.org/wiki/Pepe_the_Frog"
+  },
+  "candidate_review": {
+   "decision": "related",
+   "note": "밈 원작(개구리 페페) 문서 — 토큰 문서 아님"
+  }
+ },
+ "falcon-finance": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "mantle": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "pax-gold": {
+  "wikidata": {
+   "qid": "Q140255061",
+   "method": "label_search+desc_filter",
+   "label_ko": null,
+   "desc_en": "digital currency"
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "world-liberty-financial": {
+  "wikidata": {
+   "qid": "Q130316305",
+   "method": "label_search+desc_filter",
+   "label_ko": null,
+   "desc_en": "cryptocurrency platform"
+  },
+  "kowiki": null,
+  "enwiki": {
+   "title": "World Liberty Financial",
+   "page_id": 78065953,
+   "chars": 12516,
+   "lastrevid": 1377904153,
+   "url": "https://en.wikipedia.org/wiki/World_Liberty_Financial"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null,
+  "link_review": {
+   "decision": "accept",
+   "needs_review": false,
+   "note": "WLFI 거버넌스 토큰의 플랫폼 문서"
+  }
+ },
+ "sky": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "usdd": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "memecore": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "spiko-amundi-overnight-swap-fund-eur": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "morpho": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "internet-computer": {
+  "wikidata": {
+   "qid": "Q106853086",
+   "method": "P5777=coingecko_id",
+   "label_ko": null,
+   "desc_en": "cryptocurrency"
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "united-stables": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "htx-dao": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "bitget-token": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": {
+   "title": "Bitget",
+   "page_id": 82029832,
+   "string_match": "prefix_related",
+   "url": "https://en.wikipedia.org/wiki/Bitget"
+  },
+  "candidate_review": {
+   "decision": "related",
+   "note": "발행 거래소 문서"
+  }
+ },
+ "bfusd": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "venice-token": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "usdgo": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "arbitrum": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "ethereum-classic": {
+  "wikidata": {
+   "qid": "Q29583124",
+   "method": "P5777=coingecko_id",
+   "label_ko": "이더리움 클래식",
+   "desc_en": "open source blockchain computing platform"
+  },
+  "kowiki": {
+   "title": "이더리움 클래식",
+   "page_id": 1876746,
+   "chars": 2315,
+   "lastrevid": 41278058,
+   "url": "https://ko.wikipedia.org/wiki/%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80_%ED%81%B4%EB%9E%98%EC%8B%9D"
+  },
+  "enwiki": {
+   "title": "Ethereum Classic",
+   "page_id": 51159152,
+   "chars": 17796,
+   "lastrevid": 1339943219,
+   "url": "https://en.wikipedia.org/wiki/Ethereum_Classic"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "just": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "jupiter-exchange-solana": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "kaspa": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "gatechain-token": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "kucoin-shares": {
+  "wikidata": {
+   "qid": "Q97572932",
+   "method": "label_search+desc_filter",
+   "label_ko": "쿠코인",
+   "desc_en": "Singapore-based cryptocurrency exchange"
+  },
+  "kowiki": null,
+  "enwiki": {
+   "title": "KuCoin",
+   "page_id": 76584727,
+   "chars": 4643,
+   "lastrevid": 1380810719,
+   "url": "https://en.wikipedia.org/wiki/KuCoin"
+  },
+  "search_candidate_ko": {
+   "title": "KuCoin",
+   "page_id": 3618948,
+   "string_match": "exact",
+   "url": "https://ko.wikipedia.org/wiki/KuCoin"
+  },
+  "search_candidate_en": null,
+  "candidate_review": {
+   "decision": "related",
+   "note": "토큰 발행 거래소 문서"
+  },
+  "link_review": {
+   "decision": "related",
+   "needs_review": false,
+   "note": "KuCoin 거래소(회사) 문서 — KCS 토큰 자체 문서 아님"
+  }
+ },
+ "algorand": {
+  "wikidata": {
+   "qid": "Q30938181",
+   "method": "P5777=coingecko_id",
+   "label_ko": "알고랜드",
+   "desc_en": "blockchain and cryptocurrency"
+  },
+  "kowiki": {
+   "title": "알고랜드",
+   "page_id": 4101615,
+   "chars": 3304,
+   "lastrevid": 42347465,
+   "url": "https://ko.wikipedia.org/wiki/%EC%95%8C%EA%B3%A0%EB%9E%9C%EB%93%9C"
+  },
+  "enwiki": {
+   "title": "Algorand",
+   "page_id": 67291815,
+   "chars": 6238,
+   "lastrevid": 1378483326,
+   "url": "https://en.wikipedia.org/wiki/Algorand"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "polygon-ecosystem-token": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "render-token": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "lighter": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "cosmos": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": {
+   "title": "Cosmos (network)",
+   "page_id": 82917842,
+   "string_match": "prefix_related",
+   "url": "https://en.wikipedia.org/wiki/Cosmos_%28network%29"
+  },
+  "candidate_review": {
+   "decision": "accept",
+   "note": "Cosmos Hub 가 속한 Cosmos 네트워크"
+  }
+ },
+ "pi-network": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "filecoin": {
+  "wikidata": {
+   "qid": "Q39048590",
+   "method": "P5777=coingecko_id",
+   "label_ko": null,
+   "desc_en": "open-source, public cryptocurrency and digital payment system with a blockchain-based cooperative digital storage and data retrieval method"
+  },
+  "kowiki": null,
+  "enwiki": {
+   "title": "Filecoin",
+   "page_id": 54859253,
+   "chars": 2628,
+   "lastrevid": 1371816113,
+   "url": "https://en.wikipedia.org/wiki/Filecoin"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "injective-protocol": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "pearl-2": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "open-usd": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "nexo": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": {
+   "title": "Nexo (company)",
+   "page_id": 83229400,
+   "string_match": "exact",
+   "url": "https://en.wikipedia.org/wiki/Nexo_%28company%29"
+  },
+  "candidate_review": {
+   "decision": "related",
+   "note": "토큰 발행사 문서"
+  }
+ },
+ "aerodrome-finance": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "layerzero": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "superstate-short-duration-us-government-securities-fund-ustb": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "aptos": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": {
+   "title": "Aptos Labs",
+   "page_id": 78444053,
+   "string_match": "prefix_related",
+   "url": "https://en.wikipedia.org/wiki/Aptos_Labs"
+  },
+  "candidate_review": {
+   "decision": "related",
+   "note": "개발사 Aptos Labs 문서"
+  }
+ },
+ "pancakeswap-token": {
+  "wikidata": {
+   "qid": "Q111446865",
+   "method": "P5777=name_slug",
+   "label_ko": null,
+   "desc_en": "Decentralized cryptocurrency exchange originally built on Binance Chain"
+  },
+  "kowiki": null,
+  "enwiki": {
+   "title": "PancakeSwap",
+   "page_id": 77631263,
+   "chars": 1492,
+   "lastrevid": 1344986783,
+   "url": "https://en.wikipedia.org/wiki/PancakeSwap"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "gho": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "xdce-crowd-sale": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "midnight-3": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "blockstack": {
+  "wikidata": {
+   "qid": "Q23680087",
+   "method": "P5777=coingecko_id",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": {
+   "title": "Stacks blockchain",
+   "page_id": 68017635,
+   "chars": 1652,
+   "lastrevid": 1335662544,
+   "url": "https://en.wikipedia.org/wiki/Stacks_blockchain"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "ether-fi": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "dash": {
+  "wikidata": {
+   "qid": "Q17155887",
+   "method": "P5777=coingecko_id",
+   "label_ko": "Dash",
+   "desc_en": "cryptocurrency"
+  },
+  "kowiki": {
+   "title": "대시 (암호화폐)",
+   "page_id": 1484675,
+   "chars": 1222,
+   "lastrevid": 40445092,
+   "url": "https://ko.wikipedia.org/wiki/%EB%8C%80%EC%8B%9C_%28%EC%95%94%ED%98%B8%ED%99%94%ED%8F%90%29"
+  },
+  "enwiki": {
+   "title": "Dash (cryptocurrency)",
+   "page_id": 42935766,
+   "chars": 2251,
+   "lastrevid": 1368329292,
+   "url": "https://en.wikipedia.org/wiki/Dash_%28cryptocurrency%29"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "vechain": {
+  "wikidata": {
+   "qid": "Q133333931",
+   "method": "P5777=coingecko_id",
+   "label_ko": null,
+   "desc_en": "Public blockchain platform"
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "curve-dao-token": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "pyth-network": {
+  "wikidata": {
+   "qid": "Q140365635",
+   "method": "label_search+desc_filter",
+   "label_ko": null,
+   "desc_en": "decentralized financial data oracle network"
+  },
+  "kowiki": null,
+  "enwiki": {
+   "title": "Pyth Network",
+   "page_id": 83428516,
+   "chars": 2485,
+   "lastrevid": 1362306585,
+   "url": "https://en.wikipedia.org/wiki/Pyth_Network"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null,
+  "link_review": {
+   "decision": "accept",
+   "needs_review": false,
+   "note": "프로젝트 자체 문서"
+  }
+ },
+ "celestia": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "janus-henderson-anemoy-aaa-clo-fund": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "beldex": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "flare-networks": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "akedo": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "usual-usd": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "raydium": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "eutbl": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "kinesis-gold": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "quack-ai": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "official-trump": {
+  "wikidata": {
+   "qid": "Q131821993",
+   "method": "P5777=coingecko_id",
+   "label_ko": "$트럼프",
+   "desc_en": "cryptocurrency token bearing the image of Donald Trump"
+  },
+  "kowiki": null,
+  "enwiki": {
+   "title": "$Trump",
+   "page_id": 78920877,
+   "chars": 15458,
+   "lastrevid": 1378891423,
+   "url": "https://en.wikipedia.org/wiki/%24Trump"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "pudgy-penguins": {
+  "wikidata": {
+   "qid": "Q115859657",
+   "method": "label_search+desc_filter",
+   "label_ko": null,
+   "desc_en": "Non-fungible token and Web3 brand"
+  },
+  "kowiki": null,
+  "enwiki": {
+   "title": "Pudgy Penguins",
+   "page_id": 76152042,
+   "chars": 5576,
+   "lastrevid": 1380538006,
+   "url": "https://en.wikipedia.org/wiki/Pudgy_Penguins"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null,
+  "link_review": {
+   "decision": "accept",
+   "needs_review": false,
+   "note": "PENGU 를 발행한 NFT 브랜드 문서"
+  }
+ },
+ "bianrensheng": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "ylds": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "true-usd": {
+  "wikidata": {
+   "qid": "Q113954408",
+   "method": "P5777=name_slug",
+   "label_ko": null,
+   "desc_en": "stablecoin of the US dollar"
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "euro-coin": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "a7a5": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "grass": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "stable-2": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "virtual-protocol": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "fetch-ai": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "starknet": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "sei-network": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "derive": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "hash-2": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "pendle": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "bitcoin-cash-sv": {
+  "wikidata": {
+   "qid": "Q59285013",
+   "method": "P5777=name_slug",
+   "label_ko": null,
+   "desc_en": "cryptocurrency that is a hard fork of Bitcoin Cash (2018)"
+  },
+  "kowiki": null,
+  "enwiki": {
+   "title": "Bitcoin Satoshi Vision",
+   "page_id": 77963815,
+   "chars": 3117,
+   "lastrevid": 1370211011,
+   "url": "https://en.wikipedia.org/wiki/Bitcoin_Satoshi_Vision"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "bittorrent": {
+  "wikidata": {
+   "qid": "Q21577192",
+   "method": "P5777=coingecko_id",
+   "label_ko": null,
+   "desc_en": "peer-to-peer software for the BitTorrent protocol"
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "plasma": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "falcon-finance-ff": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "spx6900": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "tezos": {
+  "wikidata": {
+   "qid": "Q55290870",
+   "method": "P5777=coingecko_id",
+   "label_ko": null,
+   "desc_en": "decentralized, open-source blockchain network (and investment) that can execute peer-to-peer transactions and serve as a platform for deploying smart contracts"
+  },
+  "kowiki": null,
+  "enwiki": {
+   "title": "Tezos",
+   "page_id": 61225478,
+   "chars": 6612,
+   "lastrevid": 1335663270,
+   "url": "https://en.wikipedia.org/wiki/Tezos"
+  },
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "re-protocol-reusd": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "sofiusd": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "collector-crypt": {
+  "wikidata": {
+   "qid": "Q140190634",
+   "method": "label_search+desc_filter",
+   "label_ko": null,
+   "desc_en": "Solana-based platform for tokenising physical collectible trading cards"
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "lido-dao": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "verse-world": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "unibase": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "janus-henderson-anemoy-treasury-fund": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "ousg": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "sun-token": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "apxusd": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "first-digital-usd": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "gnosis": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "optimism": {
+  "wikidata": {
+   "qid": "Q114416242",
+   "method": "label_search+desc_filter",
+   "label_ko": null,
+   "desc_en": "\"layer 2\" blockchain"
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "olympus": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "pieverse": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "kite-2": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "conflux-token": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null
+  },
+  "kowiki": null,
+  "enwiki": null,
+  "search_candidate_ko": null,
+  "search_candidate_en": null
+ },
+ "backpack": {
+  "wikidata": {
+   "qid": null,
+   "method": "not_found",
+   "label_ko": null,
+   "label_en": null,
+   "desc_en": null
+  },
+  "kowiki": null,
+  "enwiki": null
+ }
+}

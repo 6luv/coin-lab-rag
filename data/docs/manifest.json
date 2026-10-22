@@ -1,0 +1,473 @@
+{
+ "bitcoin": {
+  "keywords": [
+   "item:ko:비트코인",
+   "q:비트코인",
+   "q:비트코인 합의 방식 변경",
+   "q:합의 알고리즘",
+   "q:작업 증명",
+   "q:사토시 나카모토",
+   "q:블록체인",
+   "q:비트코인 발행량",
+   "q:비트코인 채굴",
+   "q:비트코인 반감기"
+  ],
+  "titles": [
+   "사토시 나카모토",
+   "암호화폐",
+   "비트코인 코어",
+   "채굴 (암호화폐)",
+   "비트코인 프로토콜",
+   "비트코인"
+  ],
+  "page_ids": [
+   "wikipedia_ko-1176906",
+   "wikipedia_ko-1252863",
+   "wikipedia_ko-1849867",
+   "wikipedia_ko-2008310",
+   "wikipedia_ko-3976629",
+   "wikipedia_ko-621958"
+  ]
+ },
+ "ethereum": {
+  "keywords": [
+   "item:ko:이더리움",
+   "q:스마트 계약",
+   "q:이더리움",
+   "q:지분증명",
+   "q:블록체인"
+  ],
+  "titles": [
+   "이더리움"
+  ],
+  "page_ids": [
+   "wikipedia_ko-1247894"
+  ]
+ },
+ "tether": {
+  "keywords": [
+   "item:ko:테더 (암호화폐)"
+  ],
+  "titles": [
+   "테더 (암호화폐)"
+  ],
+  "page_ids": [
+   "wikipedia_ko-4101634"
+  ]
+ },
+ "binancecoin": {
+  "keywords": [
+   "item:en:BNB Smart Chain (blockchain platform)"
+  ],
+  "titles": [
+   "BNB Smart Chain (blockchain platform)"
+  ],
+  "page_ids": [
+   "wikipedia_en-81289832"
+  ]
+ },
+ "ripple": {
+  "keywords": [
+   "item:ko:XRP 레저"
+  ],
+  "titles": [
+   "XRP 레저"
+  ],
+  "page_ids": [
+   "wikipedia_ko-1846022"
+  ]
+ },
+ "usd-coin": {
+  "keywords": [
+   "item:ko:USDC (암호화폐)"
+  ],
+  "titles": [
+   "USDC (암호화폐)"
+  ],
+  "page_ids": [
+   "wikipedia_ko-4101631"
+  ]
+ },
+ "solana": {
+  "keywords": [
+   "item:en:Solana (blockchain platform)"
+  ],
+  "titles": [
+   "Solana (blockchain platform)"
+  ],
+  "page_ids": [
+   "wikipedia_en-68695418"
+  ]
+ },
+ "tron": {
+  "keywords": [
+   "item:ko:트론 (블록체인)"
+  ],
+  "titles": [
+   "트론 (블록체인)"
+  ],
+  "page_ids": [
+   "wikipedia_ko-4101629"
+  ]
+ },
+ "zcash": {
+  "keywords": [
+   "item:ko:Zcash",
+   "q:프라이버시 코인",
+   "q:영지식증명",
+   "q:작업증명",
+   "q:제로지식증명"
+  ],
+  "titles": [
+   "Zcash",
+   "암호화폐와 범죄",
+   "제로코인 프로토콜"
+  ],
+  "page_ids": [
+   "wikipedia_ko-1873568",
+   "wikipedia_ko-4094237",
+   "wikipedia_ko-4101638"
+  ]
+ },
+ "dogecoin": {
+  "keywords": [
+   "item:ko:도지코인"
+  ],
+  "titles": [
+   "도지코인"
+  ],
+  "page_ids": [
+   "wikipedia_ko-1048688"
+  ]
+ },
+ "monero": {
+  "keywords": [
+   "item:ko:모네로"
+  ],
+  "titles": [
+   "모네로"
+  ],
+  "page_ids": [
+   "wikipedia_ko-1890284"
+  ]
+ },
+ "chainlink": {
+  "keywords": [
+   "item:en:Chainlink (blockchain oracle)"
+  ],
+  "titles": [
+   "Chainlink (blockchain oracle)"
+  ],
+  "page_ids": [
+   "wikipedia_en-67444790"
+  ]
+ },
+ "cardano": {
+  "keywords": [
+   "item:ko:카르다노 (블록체인 플랫폼)"
+  ],
+  "titles": [
+   "카르다노 (블록체인 플랫폼)"
+  ],
+  "page_ids": [
+   "wikipedia_ko-4101621"
+  ]
+ },
+ "near": {
+  "keywords": [
+   "item:en:NEAR (blockchain platform)"
+  ],
+  "titles": [
+   "NEAR (blockchain platform)"
+  ],
+  "page_ids": [
+   "wikipedia_en-81331455"
+  ]
+ },
+ "stellar": {
+  "keywords": [
+   "item:en:Stellar (payment network)"
+  ],
+  "titles": [
+   "Stellar (payment network)"
+  ],
+  "page_ids": [
+   "wikipedia_en-43737395"
+  ]
+ },
+ "bitcoin-cash": {
+  "keywords": [
+   "item:ko:비트코인 캐시"
+  ],
+  "titles": [
+   "비트코인 캐시"
+  ],
+  "page_ids": [
+   "wikipedia_ko-1865279"
+  ]
+ },
+ "litecoin": {
+  "keywords": [
+   "item:ko:라이트코인"
+  ],
+  "titles": [
+   "라이트코인"
+  ],
+  "page_ids": [
+   "wikipedia_ko-1022747"
+  ]
+ },
+ "uniswap": {
+  "keywords": [
+   "item:ko:유니스왑"
+  ],
+  "titles": [
+   "유니스왑"
+  ],
+  "page_ids": [
+   "wikipedia_ko-4101652"
+  ]
+ },
+ "dai": {
+  "keywords": [
+   "item:en:Dai (cryptocurrency)"
+  ],
+  "titles": [
+   "Dai (cryptocurrency)"
+  ],
+  "page_ids": [
+   "wikipedia_en-65842451"
+  ]
+ },
+ "avalanche-2": {
+  "keywords": [
+   "item:en:Avalanche (blockchain platform)"
+  ],
+  "titles": [
+   "Avalanche (blockchain platform)"
+  ],
+  "page_ids": [
+   "wikipedia_en-64064664"
+  ]
+ },
+ "sui": {
+  "keywords": [
+   "item:en:Sui (blockchain platform)"
+  ],
+  "titles": [
+   "Sui (blockchain platform)"
+  ],
+  "page_ids": [
+   "wikipedia_en-83425352"
+  ]
+ },
+ "hedera-hashgraph": {
+  "keywords": [
+   "item:en:Hedera (distributed ledger)"
+  ],
+  "titles": [
+   "Hedera (distributed ledger)"
+  ],
+  "page_ids": [
+   "wikipedia_en-56941030"
+  ]
+ },
+ "shiba-inu": {
+  "keywords": [
+   "item:ko:시바이누코인"
+  ],
+  "titles": [
+   "시바이누코인"
+  ],
+  "page_ids": [
+   "wikipedia_ko-3086709"
+  ]
+ },
+ "aave": {
+  "keywords": [
+   "item:en:Aave"
+  ],
+  "titles": [
+   "Aave"
+  ],
+  "page_ids": [
+   "wikipedia_en-78346135"
+  ]
+ },
+ "pump-fun": {
+  "keywords": [
+   "item:en:Pump.fun"
+  ],
+  "titles": [
+   "Pump.fun"
+  ],
+  "page_ids": [
+   "wikipedia_en-78559650"
+  ]
+ },
+ "worldcoin-wld": {
+  "keywords": [
+   "item:ko:월드 (블록체인)"
+  ],
+  "titles": [
+   "월드 (블록체인)"
+  ],
+  "page_ids": [
+   "wikipedia_ko-4101657"
+  ]
+ },
+ "polkadot": {
+  "keywords": [
+   "item:en:Polkadot (blockchain platform)"
+  ],
+  "titles": [
+   "Polkadot (blockchain platform)"
+  ],
+  "page_ids": [
+   "wikipedia_en-56086757"
+  ]
+ },
+ "world-liberty-financial": {
+  "keywords": [
+   "item:en:World Liberty Financial"
+  ],
+  "titles": [
+   "World Liberty Financial"
+  ],
+  "page_ids": [
+   "wikipedia_en-78065953"
+  ]
+ },
+ "ethereum-classic": {
+  "keywords": [
+   "item:ko:이더리움 클래식"
+  ],
+  "titles": [
+   "이더리움 클래식"
+  ],
+  "page_ids": [
+   "wikipedia_ko-1876746"
+  ]
+ },
+ "algorand": {
+  "keywords": [
+   "item:ko:알고랜드"
+  ],
+  "titles": [
+   "알고랜드"
+  ],
+  "page_ids": [
+   "wikipedia_ko-4101615"
+  ]
+ },
+ "cosmos": {
+  "keywords": [
+   "item:en:Cosmos (network)"
+  ],
+  "titles": [
+   "Cosmos (network)"
+  ],
+  "page_ids": [
+   "wikipedia_en-82917842"
+  ]
+ },
+ "filecoin": {
+  "keywords": [
+   "item:en:Filecoin"
+  ],
+  "titles": [
+   "Filecoin"
+  ],
+  "page_ids": [
+   "wikipedia_en-54859253"
+  ]
+ },
+ "pancakeswap-token": {
+  "keywords": [
+   "item:en:PancakeSwap"
+  ],
+  "titles": [
+   "PancakeSwap"
+  ],
+  "page_ids": [
+   "wikipedia_en-77631263"
+  ]
+ },
+ "blockstack": {
+  "keywords": [
+   "item:en:Stacks blockchain"
+  ],
+  "titles": [
+   "Stacks blockchain"
+  ],
+  "page_ids": [
+   "wikipedia_en-68017635"
+  ]
+ },
+ "dash": {
+  "keywords": [
+   "item:ko:대시 (암호화폐)"
+  ],
+  "titles": [
+   "대시 (암호화폐)"
+  ],
+  "page_ids": [
+   "wikipedia_ko-1484675"
+  ]
+ },
+ "pyth-network": {
+  "keywords": [
+   "item:en:Pyth Network"
+  ],
+  "titles": [
+   "Pyth Network"
+  ],
+  "page_ids": [
+   "wikipedia_en-83428516"
+  ]
+ },
+ "official-trump": {
+  "keywords": [
+   "item:en:$Trump"
+  ],
+  "titles": [
+   "$Trump"
+  ],
+  "page_ids": [
+   "wikipedia_en-78920877"
+  ]
+ },
+ "pudgy-penguins": {
+  "keywords": [
+   "item:en:Pudgy Penguins"
+  ],
+  "titles": [
+   "Pudgy Penguins"
+  ],
+  "page_ids": [
+   "wikipedia_en-76152042"
+  ]
+ },
+ "bitcoin-cash-sv": {
+  "keywords": [
+   "item:en:Bitcoin Satoshi Vision"
+  ],
+  "titles": [
+   "Bitcoin Satoshi Vision"
+  ],
+  "page_ids": [
+   "wikipedia_en-77963815"
+  ]
+ },
+ "tezos": {
+  "keywords": [
+   "item:en:Tezos"
+  ],
+  "titles": [
+   "Tezos"
+  ],
+  "page_ids": [
+   "wikipedia_en-61225478"
+  ]
+ }
+}

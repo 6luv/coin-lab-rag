@@ -1,0 +1,16 @@
+{
+ "page_id": 83428516,
+ "doc_id": "wikipedia_en-83428516",
+ "title": "Pyth Network",
+ "url": "https://en.wikipedia.org/wiki/Pyth_Network",
+ "text": "Pyth Network is a decentralized market data network that aggregates real-time price feeds and market data directly from financial institutions, trading firms, exchanges, and market makers. It distributes this data for use in both institutional finance and blockchain-based applications.\nDevelopment of the network began in April 2021. In 2021 the Pyth Data Association was established in Baar, Switzerland, and in 2023 Douro Labs was formed by the founders to function as a core contributor to the project. By 2025 the network included more than 120 institutional publishers across more than 100 blockchains.\nIn September 2025 Pyth launched Pyth Pro, an institutional-grade market data subscription service that reached more than $1 million in annual recurring revenue in its first month.\n\n\n== Background ==\nDevelopment of Pyth Network began in April 2021. That year the Pyth Data Association was established in Baar, Switzerland, to support the project. In 2023 the founders created Douro Labs as a core contributor to development.\nBy 2025 the network had expanded to receive data from more than 120 institutional publishers and was integrated by more than 600 applications across more than 100 blockchains. In September 2025 the project introduced Pyth Pro, a subscription service aimed at institutional users, which achieved more than $1 million in annual recurring revenue within its first month.\n\n\n== Design ==\nPyth Network aggregates price information across multiple asset classes, including cryptocurrencies, equities and ETFs, foreign exchange, commodities, economic data from the United States Department of Commerce, and prediction market outcomes. Data inputs from financial institutions are combined to produce consolidated price feeds that include associated confidence intervals.\n\n\n== Partnerships ==\nIn May 2025 Pyth partnered with Integral, an FX infrastructure provider. The collaboration enables institutional FX banks and brokers, such as Mizuho and others, to publish foreign exchange data directly onchain via Pyth.\nIn August 2025 Pyth was selected alongside Chainlink to publish selected economic datasets from the United States Department of Commerce, including gross domestic product (GDP) data, on blockchain networks.\nIn October 2025 Pyth partnered with Kalshi, a U.S. prediction market. The integration made event-based probabilities available for blockchain applications.\n\n\n== See also ==\nDecentralized finance\nFinancial data\nMarket data\n\n\n== References ==",
+ "source": "English Wikipedia",
+ "source_type": "wikipedia_en",
+ "license": "CC BY-SA 4.0",
+ "coin_id": "pyth-network",
+ "related_coin": "Pyth Network",
+ "search_query": "item:en:Pyth Network",
+ "is_item_doc": true,
+ "lastrevid": 1362306585,
+ "collected_at": "2026-10-22"
+}

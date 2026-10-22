@@ -1,0 +1,15 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# 벡터 DB (로컬에서 재생성)
+data/chroma/
+
+# CoinGecko 데이터: 약관상 저장 비권장·24시간 내 갱신·재배포 제한 → 저장소에 올리지 않고 각자 collect_coins 로 받는다
+# (제출 시 데이터 포함이 필요하면 강사 안내와 docs/data_sources.md 를 확인한 뒤 이 두 줄을 조정)
+data/raw/
+data/coins.json
+web/sample/coins_sample.js

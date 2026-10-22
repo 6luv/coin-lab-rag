@@ -1,0 +1,16 @@
+{
+ "page_id": 81289832,
+ "doc_id": "wikipedia_en-81289832",
+ "title": "BNB Smart Chain (blockchain platform)",
+ "url": "https://en.wikipedia.org/wiki/BNB_Smart_Chain_(blockchain_platform)",
+ "text": "BNB Smart Chain (formerly Binance Smart Chain) is a public blockchain platform that uses a proof-of-stake consensus mechanism and provides smart contract functionality. The platform's native cryptocurrency is BNB. The system is part of the broader Binance ecosystem founded in 2017 by Changpeng Zhao and Yi He.\n\n\n== Characteristics ==\nBNB Smart Chain is compatible with the Ethereum Virtual Machine, allowing it to execute Ethereum-compatible smart contracts. BNB is used to pay transaction fees and participate in staking.\nThe network uses a consensus mechanism called proof of staked authority (PoSA), combining elements of delegated proof of stake and proof of authority. Validators take turns producing blocks. The bsc software client is derived from go-ethereum.\nThe Fermi upgrade in January 2026 reduced the target block interval to 0.45 seconds.\n\n\n== History ==\nBinance Smart Chain launched on 1 September 2020.\nBNB originated in 2017 as an Ethereum-based token for Binance exchange users, becoming the native coin for the separate Binance Chain in 2019 via a token swap.\nIn 2020, the parallel Binance Smart Chain (BSC) launched, adding smart contract functionality, and was rebranded as BNB Smart Chain in 2022. BNB Chain use of centralization had led to several exploits on the network.\nBinance Smart Chain was renamed to BNB Chain. The unified BNB Chain was introduced in 2022, combining the functions of the original Binance Chain (now BNB Beacon Chain) and BNB Smart Chain into a single system.\nIn October 2022, the BSC Token Hub bridge connecting BNB Beacon Chain and BNB Smart Chain was exploited. The attacker created approximately two million BNB, worth about US$570 million. Validators temporarily halted the network, which resumed operation on 7 October. Binance said about US$100 million remained unrecovered.\nIndependent security tallies have found BNB Chain to be among the most targeted networks by incident count in 2023, with industry coverage highlighting rug pulls as a frequent loss vector.\nSince 2023, regulatory exposure has been cited due to links with Binance and the BNB token: the U.S. SEC filed a civil complaint in June 2023 alleging unregistered offers and other violations; in May 2025 the SEC announced a joint stipulation to dismiss the case with prejudice.\nIn 2024, the BNB Chain Fusion project transferred staking and governance functions from BNB Beacon Chain to BNB Smart Chain. BNB Beacon Chain ceased operation on 3 December 2024.\n\n\n== See also ==\nCardano (blockchain platform)\nSolana (blockchain platform)\nList of cryptocurrencies\nDecentralized finance\n\n\n== References ==",
+ "source": "English Wikipedia",
+ "source_type": "wikipedia_en",
+ "license": "CC BY-SA 4.0",
+ "coin_id": "binancecoin",
+ "related_coin": "BNB",
+ "search_query": "item:en:BNB Smart Chain (blockchain platform)",
+ "is_item_doc": true,
+ "lastrevid": 1377850333,
+ "collected_at": "2026-10-22"
+}

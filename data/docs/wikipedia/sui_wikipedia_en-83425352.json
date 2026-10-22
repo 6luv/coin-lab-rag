@@ -1,0 +1,16 @@
+{
+ "page_id": 83425352,
+ "doc_id": "wikipedia_en-83425352",
+ "title": "Sui (blockchain platform)",
+ "url": "https://en.wikipedia.org/wiki/Sui_(blockchain_platform)",
+ "text": "Sui is a Layer 1 blockchain developed by Mysten Labs, a company founded in September 2021 by former engineers from Meta Platforms' Diem project. It is built around an object-centric data model and a variant of the Move programming language.\n\n\n== Background and founding ==\nSui's technical foundations trace to Diem (originally called Libra), a digital payments project announced by Meta (then Facebook) in 2019. Diem's engineering team developed the Move programming language and an object-based data model intended for a payments network. After regulatory pressure from authorities in the United States and elsewhere, Meta wound down Diem in early 2022 and sold its assets to Silvergate Bank.\nMembers of the Diem project left Meta and founded Mysten Labs in September 2021, before the formal shutdown of the project, to build a new Layer 1 blockchain using technology developed at Meta: Evan Cheng, Sam Blackshear, creator of the Move programming language, Adeniyi Abiodun, George Danezis, and Kostas Chalkias. The company raised $36 million in a funding round led by Andreessen Horowitz in December 2021.\nMysten Labs announced Sui publicly in March 2022 and opened a public devnet in August 2022.\n\n\n== Technology ==\n\n\n=== Move programming language ===\nSui uses a dialect of Move, a programming language originally created for the Diem project by Sam Blackshear. Forbes reported that the language was designed to avoid certain classes of smart-contract vulnerability associated with Solidity, the dominant language on Ethereum.\n\n\n=== Object model ===\nSui uses an object-centric model in which on-chain assets are represented as distinct, uniquely identified objects. Fortune described the design as allowing the network to identify transactions that operate on independent objects and execute them in parallel rather than in a strict sequence.\n\n\n== Name ==\nThe name \"Sui\" derives from the Japanese and classical Chinese character for water (水, sui), which Fortune reported was chosen as an allusion to the adaptability of water.\n\n\n== References ==\n\n\n== External links ==\nOfficial website\nMysten Labs",
+ "source": "English Wikipedia",
+ "source_type": "wikipedia_en",
+ "license": "CC BY-SA 4.0",
+ "coin_id": "sui",
+ "related_coin": "Sui",
+ "search_query": "item:en:Sui (blockchain platform)",
+ "is_item_doc": true,
+ "lastrevid": 1366529154,
+ "collected_at": "2026-10-22"
+}
