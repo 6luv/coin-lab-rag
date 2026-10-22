@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coin Lab</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>
+    // 저장된 테마를 그리기 전에 적용한다 (기본: 라이트)
+    try { if (localStorage.getItem("coinlab.theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <!-- 상단 바 -->
+    <header class="topbar">
+      <a class="brand" id="home-link" href="./" title="메인 화면으로">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <span class="brand-name">COIN<em>LAB</em></span>
+      </a>
+      <div class="top-actions">
+        <div class="status-chip" id="status-chip">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span id="index-status">색인 상태 확인 중…</span>
+        </div>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="다크 모드로 전환">☾</button>
+      </div>
+    </header>
+
+    <div class="notice warn hidden" id="setup-warning" role="status"></div>
+
+    <!-- 왼쪽: 코인 목록 · 조건 탐색 -->
+    <aside class="rail" aria-label="코인 목록">
+      <form id="recommend-form" class="find">
+        <label class="sr-only" for="recommend-input">코인 검색</label>
+        <div class="find-row">
+          <input id="recommend-input" placeholder="코인 검색" maxlength="200" autocomplete="off"
+                 title="입력하면 목록이 걸러지고, Enter 를 누르면 조건으로 찾습니다 (예: 이더리움 위의 레이어2)">
+          <button type="submit" class="btn-acid" aria-label="조건으로 코인 찾기">→</button>
+        </div>
+      </form>
+      <div class="pills" id="category-pills" role="tablist" aria-label="카테고리"></div>
+      <ul class="coin-list" id="coin-rail"></ul>
+    </aside>
+
+    <!-- 가운데: 코인 카드 · 대화 / 탐색 결과 -->
+    <main class="stage">
+      <section id="welcome" class="welcome">
+        <div class="hero">
+          <p class="eyebrow">RAG · Coin Project Analysis</p>
+          <h1>근거로 답하는 코인 프로젝트 분석</h1>
+          <p class="lead">코인을 검색하거나 예시 질문으로 시작하세요. CoinGecko 메타데이터와 위키백과·백서 문서를 근거로, 근거 번호와 원문 출처를 붙여 답합니다.</p>
+
+          <form id="home-search" class="home-search" role="search" autocomplete="off">
+            <label class="sr-only" for="home-input">코인 검색</label>
+            <div class="home-search-row">
+              <input id="home-input" placeholder="코인 이름이나 조건 — 예: 비트코인, 이더리움 위의 레이어2" maxlength="200"
+                     aria-controls="home-suggest" aria-autocomplete="list">
+              <button type="submit" class="btn-acid">검색</button>
+            </div>
+            <ul id="home-suggest" class="home-suggest hidden" role="listbox" aria-label="일치하는 코인"></ul>
+          </form>
+
+          <div class="examples">
+            <p class="label">예시 질문</p>
+            <div class="example-list" id="example-list"></div>
+          </div>
+        </div>
+
+        <div class="home-list">
+          <div class="home-list-head">
+            <h2>코인 리스트</h2>
+          </div>
+          <div class="coin-grid" id="coin-grid"></div>
+          <button type="button" id="more-coins" class="btn-ghost more-coins">더 보기</button>
+        </div>
+      </section>
+
+      <section id="coin-card" class="card widget hidden" aria-live="polite">
+        <div class="widget-head">
+          <div class="token-icon" id="coin-icon" aria-hidden="true"></div>
+          <div class="token-id">
+            <div class="token-symbol" id="coin-symbol"></div>
+            <div class="token-name"><span id="coin-title"></span><span class="rank" id="coin-rank"></span></div>
+          </div>
+          <div class="token-price">
+            <div class="price" id="coin-price"></div>
+            <div class="delta" id="coin-delta"></div>
+          </div>
+        </div>
+        <div class="tabs" id="tf-tabs" role="tablist" aria-label="기간">
+          <button type="button" role="tab" data-tf="24h">24H</button>
+          <button type="button" role="tab" data-tf="7d" aria-selected="true">7D</button>
+          <button type="button" role="tab" data-tf="30d">30D</button>
+        </div>
+        <div class="chart" id="chart"></div>
+        <p class="chart-note" id="chart-note"></p>
+        <div class="stats" id="coin-stats"></div>
+        <p class="attribution">Data provided by <a href="https://www.coingecko.com" target="_blank" rel="noopener noreferrer">CoinGecko</a> · <span id="coin-snapshot"></span></p>
+      </section>
+
+      <section id="chat-view" class="card chat hidden">
+        <div class="chat-head">
+          <span class="label">근거 기반 질의응답</span>
+          <div class="chat-actions">
+            <button id="brief-button" type="button" class="btn-ghost small" disabled title="합의 방식·발행량·주요 사건을 근거와 함께 정리">리스크 브리핑</button>
+            <button id="factcheck-button" type="button" class="btn-ghost small" disabled title="입력창에 적은 주장을 문서 근거와 대조">주장 팩트체크</button>
+            <button id="clear-button" type="button" class="btn-ghost small hidden">대화 지우기</button>
+          </div>
+        </div>
+        <div id="messages" class="messages" aria-live="polite"></div>
+        <div id="progress" class="progress hidden"><span class="spinner"></span><span id="progress-text"></span></div>
+        <form id="chat-form" class="chat-form">
+          <input id="chat-input" placeholder="이 프로젝트에 대해 물어보세요 — 예: 합의 방식이 언제 바뀌었나요?" maxlength="500" autocomplete="off">
+          <button type="submit" id="send-button" class="btn-acid">보내기</button>
+        </form>
+      </section>
+
+      <section id="recommend-view" class="hidden">
+        <div class="result-head">
+          <button id="back-button" type="button" class="btn-ghost small">← 돌아가기</button>
+          <h2 id="recommend-title"></h2>
+        </div>
+        <p class="caption" id="recommend-caption"></p>
+        <div id="recommend-results" class="result-grid"></div>
+      </section>
+    </main>
+
+    <!-- 오른쪽: 프로젝트 정보 -->
+    <aside class="side" aria-label="프로젝트 정보">
+      <section class="card panel">
+        <p class="label">프로젝트 정보</p>
+        <dl class="facts" id="coin-meta"><div><dt>코인</dt><dd>선택되지 않음</dd></div></dl>
+        <div class="chips" id="coin-categories"></div>
+        <div class="links" id="coin-links"></div>
+        <p class="label">연결된 문서</p>
+        <p class="docs" id="coin-docs">—</p>
+      </section>
+
+      <section class="card panel hidden" id="talking-box">
+        <p class="label">대화 중인 코인</p>
+        <ul id="talking-list" class="talking"></ul>
+      </section>
+    </aside>
+
+    <!-- 하단 고정 바: 면책 · 출처 -->
+    <footer class="footbar">
+      <span class="warn-tag">NOT FINANCIAL ADVICE</span>
+      <span id="disclaimer" class="footnote"></span>
+    </footer>
+  </div>
+
+  <!-- 샘플 모드 데이터 (file:// 에서도 읽히도록 JS 파일) -->
+  <script src="sample/coins_sample.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
