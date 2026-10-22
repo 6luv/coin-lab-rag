@@ -12,8 +12,8 @@
 ## 2. 세션 시작 때 읽는 순서
 1. 이 파일
 2. `docs/progress.md` — 지금까지 한 일과 **다음 작업**
-3. `docs/requirements.md` — 요구사항 정의서 원문 기준(조건·확인 항목), `docs/plan.md` — 요구사항별 설계와 상태
-4. 작업 영역에 따라: `docs/decisions.md`(결정과 근거), `docs/troubleshooting.md`(이전 오류 — 같은 오류를 다시 분석하지 않는다), `DESIGN.md`(화면), `docs/data_sources.md`(데이터 출처·이용 조건), `docs/architecture.md`
+3. `docs/requirements.md` — 요구사항 정의서 원문 기준(조건·확인 항목), `docs/requirements_definition.md` — 요구사항 표와 구현 상태, `docs/verification.md` — 최근 검증 결과
+4. 작업 영역에 따라: `docs/decisions.md`(결정과 근거), `docs/troubleshooting.md`(이전 오류 — 같은 오류를 다시 분석하지 않는다), `DESIGN.md`(화면), `docs/data_sources.md`(데이터 출처·이용 조건), `docs/rag_pipeline_design.md`(구조·설계)
 5. `git status` 로 커밋 안 된 변경 확인 (사용자가 직접 고친 파일이 있을 수 있다 — 덮어쓰기 전에 차이를 확인한다)
 
 ## 3. 역할
@@ -33,7 +33,7 @@
 4. 테스트를 실행한다: `python -m pytest -q`, `python -m scripts.check_sample` (필요하면 5장의 나머지).
 5. Codex 검증을 받는다 (6장: `agent_loop --review-only` 또는 `/codex-review`).
 6. FAIL 이면 고치고 재검증을 요청한다. **같은 문제로 3회 수정에 실패하면 멈추고 사용자에게 보고한다.**
-7. PASS 후 `docs/progress.md` 를 갱신하고, 중요한 변경이면 `docs/architecture.md`·`docs/decisions.md` 도 갱신한다.
+7. PASS 후 `docs/progress.md` 를 갱신하고, 중요한 변경이면 `docs/rag_pipeline_design.md`·`docs/decisions.md`·`docs/verification.md` 도 갱신한다.
 8. 사용자에게 완료 보고(8장)를 한다.
 
 ## 5. 명령
@@ -71,7 +71,7 @@ python -m scripts.agent_loop --dry-run "<작업>"        # 실행할 명령만 �
 
 ## 7. 검증 기준 (Codex · 대체 리뷰어)
 확인 항목
-1. 요구사항 충족 — 기준은 `docs/requirements.md`(정의서 원문의 조건·확인 항목). `docs/plan.md` 는 구현 설계로만 참고하고, 둘이 다르면 `docs/requirements.md` 를 따른다
+1. 요구사항 충족 — 기준은 `docs/requirements.md`(정의서 원문의 조건·확인 항목). `docs/rag_pipeline_design.md` 는 구현 설계로만 참고하고, 둘이 다르면 `docs/requirements.md` 를 따른다
 2. 로직 오류·경계 조건 (빈 입력, 위키 문서 없음, 429·네트워크 오류, LLM 파싱 실패, 중복 색인)
 3. 예외 처리
 4. 보안: 키·`.env` 노출, 화면에 프롬프트·스택트레이스 노출, XSS, 경로 조작, 문서 속 지시문(프롬프트 주입)

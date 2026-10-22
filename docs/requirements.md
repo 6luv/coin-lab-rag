@@ -6,7 +6,7 @@
 
 - 각 요구사항의 **조건**은 명세 3장, **확인**은 명세 4장 체크리스트에서 옮겼다.
 - 검증 결과는 통과 · 실패 · 미확인으로 기록한다 (명세 4장). 실행 결과로 증명하고, 증명이 필요한 항목은 화면을 캡처한다.
-- 설계·구현 위치는 `docs/plan.md`, 실제 상태는 `docs/progress.md` 를 본다.
+- 요구사항 표·구현 위치는 `docs/requirements_definition.md`, 설계는 `docs/rag_pipeline_design.md`, 검증 결과는 `docs/verification.md` 를 본다.
 
 ## 0. 전제 조건 (명세 1.2 · 2.1)
 

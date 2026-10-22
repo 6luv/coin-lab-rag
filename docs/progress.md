@@ -38,10 +38,19 @@
 - [x] 항목별 외부 설명 문서 보강 방식 결정: 위키 검색(D12) + 백서 PDF·웹(D14, F2016) — `collect_whitepapers`, 질문 시 대체 수집, PDF 쪽 단위 청킹·근거 쪽 표시, 테스트 6건 (`pytest` 56건)
 - [x] 사용자 PC 수집 결과: 자체 설명 문서가 있는 코인 103 / 150 (위키 + 백서 63건)
 - [x] Codex 재검증 r2 FAIL(Medium 2): ① 문서 없는 코인 47개 → 사용자 결정으로 허용(D15), ② GitHub 미리보기 화면을 백서로 저장(gho·morpho·sei-network·pendle) → 원본 파일로 받기·미리보기 배제·`--prune` 정리(D16), 테스트 4건 (`pytest` 61건)
-- [ ] 사용자 PC: `collect_whitepapers --prune` → `index_docs` → Codex 재검증 r3
-- [ ] 실제 동작 점검(정의서 4장 체크리스트): F2007 근거 준수, F2010 결과 품질, NF2001 응답 시간 등
+- [x] 사용자 PC: `collect_whitepapers --prune` → `index_docs` → Codex 재검증 r3 **PASS** (자체 문서 보유 102 / 150, 테스트 61건)
+- [x] 실제 동작 점검(정의서 4장 체크리스트) — `docs/verification.md`: 필수 확인 항목 20개 중 통과 17 · 미확인 3
+- [x] 실행 중 발견: 백서 코인 500(서버 실행 중 색인 → Chroma "Error finding id") → 서버 재시작으로 해소, 실행 중 색인 거부·503 안내 / 같은 질문 재수집 → 질문별 검색어 재사용 (`pytest` 65건)
+
+## 4단계 · 제출물 (2026-10-22)
+- [x] 요구사항 정의서 `docs/requirements_definition.md`, RAG 파이프라인 설계문서 `docs/rag_pipeline_design.md`, 검증 결과 `docs/verification.md`, README 제출용 재작성
+- [x] 문서 정리: `docs/plan.md` → 요구사항 정의서·설계문서로, `docs/architecture.md` → 설계문서로 합침
+- [x] 사용자 PC: `index_docs` 재실행(31 → 2,235청크) → 백서 근거 "백서 PDF p.N"·"백서(웹)" 표시 확인 (F2016 통과)
+- [ ] 서버 재시작 후 같은 질문 재수집 없음 재확인 (질문별 검색어 재사용 코드 반영 후)
+- [ ] 증명 캡처 S01~S17 (`docs/verification.md` 8장), 상호 체크리스트, 공식 셀프 체크리스트
+- [ ] 제출 zip: `AI코어프로젝트2_[주제명]_지역_반_성명.zip`
 
 ## 다음 작업
-1. 실제 GMS 답변 품질 확인·프롬프트 다듬기 (서버 연결·답변 1건 확인함)
-2. 심화: F2014 유사도 vs MMR 비교, F2015 RAG 전후 비교 문서, F2016 백서 PDF 결합
-3. 4장 검증 체크리스트·스크린샷 정리
+1. 위 미완료 항목 (재색인·재확인, 캡처, zip)
+2. 남은 미확인 검증: Top-k 변경 비교, 키·색인 없는 상태 안내
+3. 선택: F2014 유사도 vs MMR 비교, F2015 RAG 전후 비교, 조건 탐색 누락 개선
