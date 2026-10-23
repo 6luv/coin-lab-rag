@@ -84,5 +84,3 @@ RECOMMEND_USER = """조건: {query}
 
 후보:
 {candidates}"""
-
-NOT_FOUND = "제공된 문서에서 확인되지 않습니다."
