@@ -11,8 +11,9 @@ CoinGecko 코인 메타데이터(시가총액 상위 150개)와 위키백과·�
 |---|---|
 | 요구사항 정의서 | [`docs/requirements_definition.md`](docs/requirements_definition.md) — 도메인 조건 충족 근거, 기능·비기능 요구사항 표 |
 | RAG 파이프라인 설계문서 | [`docs/rag_pipeline_design.md`](docs/rag_pipeline_design.md) — 컬렉션·메타데이터, 수집·청킹·색인 흐름, 병합, 프롬프트, 설정값 이유, 근거 표시, 특화 기능, 문제와 해결 |
-| 검증 결과 | [`docs/verification.md`](docs/verification.md) — 요구사항 대조표, 테스트 결과표, 셀프·상호 체크리스트, 제출 전 점검, 캡처 목록 |
+| 검증 결과 | [`docs/2회차_셀프·상호_체크리스트.xlsx`](docs/2회차_셀프·상호_체크리스트.xlsx) — 셀프 체크리스트(공식 양식), 심화-필수 비교, 요구사항 대조표, 테스트 결과표 · 증명 캡처 [`docs/captures/`](docs/captures/) S01~S17 |
 | 구현 소스코드 | `src/`, `scripts/`, `web/`, `tests/` (아래 폴더 구조) |
+| 셀프 체크리스트 | 위 엑셀의 `체크리스트` 시트 (3일차 공식 양식, 셀프·상호 점검 결과) |
 | README | 해당 문서 |
 
 ## 기능
@@ -29,14 +30,17 @@ CoinGecko 코인 메타데이터(시가총액 상위 150개)와 위키백과·�
 | 조건 탐색 (F2011) | "이더리움 위의 레이어2" 같은 자연어 조건 → 메타데이터 후보 → LLM 이 조건에 맞는 코인만 이유와 함께 |
 | 진행 상태·안내 (F2012) | 수집 → 답변 단계 표시, 키·색인·연락처 누락과 서버 미연결 안내, 답변마다 면책 |
 
-### 심화 (선택)
-- **F2013 프론트엔드 직접 구현**: HTML·CSS·JavaScript 화면(`web/`)과 FastAPI 서버(`/api/*`) 분리
-- **F2016 여러 문서 출처 결합**: 위키백과 + 백서(PDF·웹). PDF 는 쪽 단위로 나눠 근거에 "백서 PDF p.N" 표시, 출처 종류 배지로 구분
-- F2014 MMR 은 설정 전환(`SEARCH_TYPE=mmr`)만 있고 비교 실험은 하지 않음, F2015 는 미선택
+### 심화 (선택) — 적용 요약
+| 기능 | 적용 내용 | 필수 구현 대비 결과 |
+|---|---|---|
+| **F2013 프론트엔드 직접 구현** | HTML·CSS·JavaScript 화면(`web/`)과 FastAPI 서버(`/api/*`) 분리, 요청·응답 형식은 아래 API 표 | API 응답(`answer`·`sources`)이 화면 근거 목록에 그대로 표시됨. 메인(검색·예시 질문·코인 리스트)과 코인 상세(시세 차트·연결된 문서·대화) 화면, 근거 배지·원문 링크·진행 단계·누락 안내 추가 |
+| **F2016 여러 문서 출처 결합** | 위키백과 + 백서(PDF·웹). PDF 는 쪽 단위로 나눠 근거에 "백서 PDF p.N" 표시, 출처 종류 배지로 구분 | 자체 설명 문서가 있는 코인 40 → 102 / 150. 위키만 있을 때 "확인되지 않습니다"였던 Beldex 질문이 백서 PDF 쪽 근거로 답변됨 |
+
+F2014(MMR)는 설정 전환(`SEARCH_TYPE=mmr`)만 있고 비교 실험은 하지 않았고, F2015 는 선택하지 않았습니다. 비교 상세는 체크리스트 엑셀의 `심화-필수 비교` 시트.
 
 ## 실행 방법
 
-### 1) 환경 준비
+### 1) 환경 준비 (Python 3.10 이상)
 ```bash
 python -m venv .venv
 # Windows: .venv\Scripts\activate   /  macOS·Linux: source .venv/bin/activate
@@ -128,7 +132,8 @@ docs/                       제출 문서와 개발 기록 (아래)
 
 | 문서 | 내용 |
 |---|---|
-| `docs/requirements_definition.md` · `rag_pipeline_design.md` · `verification.md` | 제출 문서 3종 |
+| `docs/requirements_definition.md` · `rag_pipeline_design.md` · `2회차_셀프·상호_체크리스트.xlsx` | 제출 문서 3종 (검증 결과는 엑셀) |
+| `docs/captures/` | 증명 캡처 S01~S17 (체크리스트 증빙 칸의 파일) |
 | `docs/requirements.md` | 명세 원문의 조건·확인 항목 정리 (검증 기준) |
 | `docs/data_sources.md` | 데이터 출처·이용 조건·수집 규칙·검증 수치 |
 | `docs/decisions.md` | 기술 결정과 근거 (D1~D16) |
